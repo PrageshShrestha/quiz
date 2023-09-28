@@ -53,26 +53,23 @@ vector<char> answer_options_array(int qn) {
     return answer_options_u;
 }
 
-void display_menu() {
-    char choice_str;
-    string options[7] = {"General", "Sports", "Programming", "STEM", "Geography and Food", "History", "Arts"};
-    cout << "Enter the corresponding Number or select one of them to play:" << endl;
-    cout << "OPTION:";
-    cin >> choice_str;
-}
-
-void design() {
+int display_menu() {//tempoary untill the keypress system is checked
+    int choice;
     cout << "QUIZ HUNT" << endl;
-
-    // Print dots animation
-    for (int i = 0; i < 10; i++) {
-        cout << ".";
-        cout.flush();
-        this_thread::sleep_for(chrono::milliseconds(300));
-    }
+    cout << "1: Math104\n";
+    cout << "2: Phys102\n";
+    cout << "3: ENEV101\n";
+    cout << "4: ENGT105\n";
+    cout << "5: ENGG112\n";
+    
+    cout << "\nEnter the option you would like to choose: ";
+    cin >> choice;
+    return choice;
 
     cout << endl;
 }
+
+
 
 char display_question(int qn) {
     char answer;
@@ -143,7 +140,7 @@ int check_answer(int qn, char answer, int level) {
 }
 
 int main() {
-    design();
+    int option = display_menu();
     int level = 1;
     char answer;
     int qn;
