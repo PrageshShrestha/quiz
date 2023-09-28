@@ -13,8 +13,6 @@ int main()
     while(1)
     {
     key_press=getch();
-    
-    ascii_value=key_press;
-    cout << ascii_value;
+    cout << key_press;
     return 0;
 }
