@@ -7,7 +7,7 @@
 #include <thread>
 #include <chrono>
 #include <vector>
-
+using namespace std;
 class QnA {
     int qnr;
     int mt; // menu type
