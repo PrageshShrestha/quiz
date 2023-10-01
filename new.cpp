@@ -39,12 +39,12 @@ void store_position(){
     int count = positions.size();
     
     int total_count = count / 4;
-    int total_array[total_count];
+    int total_array[total_count][4];
     for(int i =0; i<total_count;i++){
     	
     	for(int j=0;j<4;j++){
     		int num = (i*4) + j;
-    		total_array[i][j] = position[num];
+    		total_array[i][j] = positions[num];
 		}
     	
 	}
@@ -72,10 +72,10 @@ else{
     int endPosition = total_array[i][j];
 	
 }
-    inputFile.seekg(startPosition, ios::beg); 
+    inputString.seekg(startPosition, ios::beg); 
 
     char buffer[endPostion-startPosition]; 
-    inputFile.read(buffer, endPosition - startPosition + 1); // Read the specified number of characters
+    inputString.read(buffer, endPosition - startPosition + 1); // Read the specified number of characters
 
     string extractedString(buffer, endPosition - startPosition + 1); // Convert the buffer to a string
     array_que[j] = buffer;
