@@ -68,7 +68,7 @@ int subjectRegister(mt_given){
     }
 };
 
-QnA questions[15];
+
 
 
 vector<char> answer_options_array(int qn) {
@@ -84,7 +84,7 @@ vector<char> answer_options_array(int qn) {
 
 void display_menu() {
     char choice_str;
-    string options[7] = {"General", "Sports", "Programming", "STEM", "Geography and Food", "History", "Arts"};
+    string options[7] = {"MATHS", "PHYSICS", "ENVIRONMENT", "COMPUTER", "COMPUTER", "ENGLISH", "ENGINEERING"};
     cout << "Enter the corresponding Number or select one of them to play:" << endl;
     cout << "OPTION:";
     cin >> choice_str;
@@ -138,6 +138,18 @@ void shuffle_vector(vector<char>& vec) {
 
     // Shuffling our vector
     shuffle(vec.begin(), vec.end(), default_random_engine(seed));
+}
+
+
+
+
+int question_finder(int level , int mt = 0){
+if(mt == 0){
+
+
+}
+
+
 }
 
 int check_answer(int qn, char answer, int level) {
@@ -286,7 +298,7 @@ store_position() ;
 
     for (int qn = 1; qn <= 20; qn++) {
         cout << "Score: " << points << endl;
-        int qn1 = question_finder(level , );
+        int qn1 = question_finder(level);
         cout << qn << "."<<display_question(qn1) << endl;
         answer_options = answer_options_array(qn1);
 
