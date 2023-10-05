@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <stdlib.h>
 using namespace std;
 
 class QnA {
@@ -21,6 +22,36 @@ public:
         cout << qn << " Saved" << endl;
     }
 };
+
+
+int stringToInteger(const std::string& str) {
+    int result = 0;
+    int sign = 1;
+    int i = 0;
+
+    // Handle leading whitespace
+    while (i < str.length() && (str[i] == ' ' || str[i] == '\t')) {
+        i++;
+    }
+
+    // Handle sign
+    if (i < str.length() && str[i] == '-') {
+        sign = -1;
+        i++;
+    }
+    else if (i < str.length() && str[i] == '+') {
+        i++;
+    }
+
+    // Convert characters to integer
+    while (i < str.length() && str[i] >= '0' && str[i] <= '9') {
+        result = result * 10 + (str[i] - '0');
+        i++;
+    }
+
+    return result * sign;
+}
+
 
 void store_position() {
     string inputString = "2 | whwat is your name ?| pragesh | 3 | 4 | mis | hello | 5 |3| what is my name| pragesh | 4|";
@@ -81,8 +112,8 @@ void store_position() {
         }
 
         try {
-            int answerInt = istringstream(array_que[0]);
-            int hello = istringstream(array_que[3]);
+            int answerInt = stringToInteger(array_que[0]);
+            int hello = stringToInteger(array_que[3]);
             real_question_array[i].add_input(i + 1, array_que[1], array_que[2],hello , answerInt);
         } catch (const std::invalid_argument& e) {
             cerr << "Invalid argument: " << e.what() << endl;
