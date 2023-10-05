@@ -17,6 +17,7 @@ class QnA {
     string question_main;
     string answer;
     int level;
+    char subject;
 
 public:
     void add_input(int qn, string question, string answer_given, int level_given , int mt_given) {
@@ -25,9 +26,34 @@ public:
         question_main = question;
         answer = answer_given;
         level = level_given;
+int subjectRegister(mt_given){
+        switch (mt_given){
+            case 1:
+                subject = "math";
+                break;
+            case 2:
+                subject = "physics";
+                break;
+            case 3:
+                subject = "enviroment";
+                break;
+            case 4:
+                subject = "computer";
+                break;
+            case 5:
+                subject = "english";
+                break;
+            case 6:
+                subject = "engineering";
+                break;
+            default:
+                return 1;
+        }
+        return 0;
+    }
         cout << qn << " Saved" << endl;
     }
-
+    
     char return_mt() {
         return mt;
     }
@@ -81,7 +107,7 @@ char display_question(int qn) {
     char answer;
     cout << real_question[qn].return_question();
     cout << endl;
-    cin >> answer;
+   
     return answer;
 }
 
@@ -145,6 +171,35 @@ int check_answer(int qn, char answer, int level) {
     }
 }
 
+int stringToInteger(const std::string& str) {
+    int result = 0;
+    int sign = 1;
+    int i = 0;
+
+    // Handle leading whitespace
+    while (i < str.length() && (str[i] == ' ' || str[i] == '\t')) {
+        i++;
+    }
+
+    // Handle sign
+    if (i < str.length() && str[i] == '-') {
+        sign = -1;
+        i++;
+    }
+    else if (i < str.length() && str[i] == '+') {
+        i++;
+    }
+
+    // Convert characters to integer
+    while (i < str.length() && str[i] >= '0' && str[i] <= '9') {
+        result = result * 10 + (str[i] - '0');
+        i++;
+    }
+
+    return result * sign;
+}
+
+
 void store_position() {
     string inputString = "2 | whwat is your name ?| pragesh | 3 | 4 | mis | hello | 5 |3| what is my name| pragesh | 4|";
     char targetChar = '|';
@@ -203,7 +258,14 @@ void store_position() {
             array_que[j] = extractedString;
         }
 
-        real_question_array[i].add_input(i + 1, array_que[1], array_que[2], stoi(array_que[3]), stoi(array_que[0]));
+        try {
+            int answerInt = stringToInteger(array_que[0]);
+            int hello = stringToInteger(array_que[3]);
+            real_question_array[i].add_input(i + 1, array_que[1], array_que[2],hello , answerInt);
+        } catch (const std::invalid_argument& e) {
+            cerr << "Invalid argument: " << e.what() << endl;
+            // Handle the invalid argument as needed, e.g., provide a default value.
+        }
     }
 
     cout << "The total questions are: " << total_count << endl;
@@ -212,21 +274,21 @@ void store_position() {
 
 
 
-
-
-
 int main() {
     design();
+store_position() ;
     int level = 1;
     char answer;
     int qn;
     string questions;
+   vector<int> already_shown_qn;// for not repeating already shown questions
     vector<char> answer_options;
 
     for (int qn = 1; qn <= 20; qn++) {
         cout << "Score: " << points << endl;
-        cout << display_question(qn) << endl;
-        answer_options = answer_options_array(qn);
+        int qn1 = question_finder(level , );
+        cout << qn << "."<<display_question(qn1) << endl;
+        answer_options = answer_options_array(qn1);
 
         shuffle_vector(answer_options);
         for (int i = 0; i < 4; i++) {
@@ -234,7 +296,7 @@ int main() {
         }
         cout << "Ans: ";
         cin >> answer;
-        level = check_answer(qn, answer, level);
+        level = check_answer(qn1, answer, level);
     }
 
     float accuracy = (static_cast<float>(points) / 40) * 100; // Convert points to float for accurate division
