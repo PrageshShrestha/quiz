@@ -17,16 +17,29 @@ class QnA {
     string question_main;
     string answer;
     int level;
-    char subject;
+    string subject;
 
 public:
+
+  QnA() {
+        int count++; // Increment the count when an object is created
+    }
+
+    ~QnA() {
+        int count--; // Decrement the count when an object is destroyed
+    }
+
+    int getCount() {
+        return count; 
+    }
     void add_input(int qn, string question, string answer_given, int level_given , int mt_given) {
         qnr = qn;
+		
         mt = mt_given;
         question_main = question;
         answer = answer_given;
         level = level_given;
-int subjectRegister(mt_given){
+         
         switch (mt_given){
             case 1:
                 subject = "math";
@@ -46,18 +59,17 @@ int subjectRegister(mt_given){
             case 6:
                 subject = "engineering";
                 break;
-            default:
-                return 1;
+           
         }
-        return 0;
-    }
+       
+    
         cout << qn << " Saved" << endl;
     }
     
-    char return_mt() {
+    int return_mt() {
         return mt;
     }
-    char return_answer() {
+    string return_answer() {
         return answer;
     }
     string return_question() {
@@ -66,30 +78,46 @@ int subjectRegister(mt_given){
     int return_qnr() {
         return qnr;
     }
+   int return_level(){
+return level;
+}
 };
 
 
 
 
-vector<char> answer_options_array(int qn) {
-    vector<char> answer_options_u(4);
-    answer_options_u[0] = real_question[qn].return_answer();
+vector<string> answer_options_array( QnA question) {
+    vector<string> answer_options_u(4);
+    answer_options_u[0] = question.return_answer();
 
     for (int i = 1; i < 4; i++) {
-        answer_options_u[i] = real_question[qn - 1].return_answer();
+        answer_options_u[i] = question.return_answer();
     }
 
     return answer_options_u;
 }
 
+
 void display_menu() {
-    char choice_str;
+    string choice_str;
     string options[7] = {"MATHS", "PHYSICS", "ENVIRONMENT", "COMPUTER", "COMPUTER", "ENGLISH", "ENGINEERING"};
     cout << "Enter the corresponding Number or select one of them to play:" << endl;
     cout << "OPTION:";
     cin >> choice_str;
 }
+int Randnum(int min, int max) {
+constexpr unsigned int LCG_A = 1664525;
+constexpr unsigned int LCG_C = 1013904223;
+constexpr unsigned int LCG_M = 65536; // 2^32
 
+
+unsigned int lcg_seed = 12345;
+
+
+
+    lcg_seed = (LCG_A * lcg_seed + LCG_C) % LCG_M;
+    return min + (lcg_seed % (max - min + 1));
+}
 void design() {
     cout << "QUIZ HUNT" << endl;
 
@@ -103,15 +131,15 @@ void design() {
     cout << endl;
 }
 
-char display_question(int qn) {
-    char answer;
-    cout << real_question[qn].return_question();
+string display_question(int qn , QnA question) {
+    string answer;
+    cout << question.return_question();
     cout << endl;
    
     return answer;
 }
 
-int add_point(char mt, int level, int points) {
+int add_point( int level, int points) {
     int pointsToAdd = 0; // Initialize the variable
 
     // Adjust the pointsToAdd based on the question number ranges
@@ -132,7 +160,7 @@ int add_point(char mt, int level, int points) {
 }
 
 // Shuffle vector
-void shuffle_vector(vector<char>& vec) {
+void shuffle_vector(vector<string>& vec) {
     // To obtain a time-based seed
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();
 
@@ -143,21 +171,33 @@ void shuffle_vector(vector<char>& vec) {
 
 
 
-int question_finder(int level , int mt = 0){
+int question_finder(int level ,int Question_bank[7][5][20], vector<int>& already_shown_qn,int mt = 0){
+previous:
+int qn2 , num1 , num2,num3;
+num2 = level;
+ num3 = Randnum(0,19);
 if(mt == 0){
-
-
+ num1 = Randnum(0,4);
+}
+else{
+num1 = mt-1;
+}
+qn2 = Question_bank[num1][num2][num3];
+int size = already_shown_qn.size();
+for(int i=1;i<size;i++){
+if(qn2 == already_shown_qn[i-1]){
+goto previous;
+}
+}
+return qn2;
 }
 
-
-}
-
-int check_answer(int qn, char answer, int level) {
-    char real_answer = real_question[qn].return_answer();
+int check_answer(int qn, string answer, int level , QnA question) {
+    string real_answer = question.return_answer();
 
     if (real_answer == answer) {
-        int st_var = real_question[qn].return_mt();
-        points = add_point(st_var, level, points); // Update points using the add_point function
+        int st_var = question.return_mt();
+        points = add_point(level, points); // Update points using the add_point function
         cout << "Correct  ";
         if (level < 5) {
             return level++;
@@ -183,6 +223,18 @@ int check_answer(int qn, char answer, int level) {
     }
 }
 
+
+int classifier_function( int count){
+int Question_bank[7][5][20];
+for(int i=1;i<count ;i++){
+int level = QnA[i].return_level();
+int mt = QnA[i].return_mt();
+int qn = QnA[i].return_qn();
+Question_bank[mt-1][level-1].push_back(qn);
+}
+return Question_bank;
+}
+
 int stringToInteger(const std::string& str) {
     int result = 0;
     int sign = 1;
@@ -202,7 +254,7 @@ int stringToInteger(const std::string& str) {
         i++;
     }
 
-    // Convert characters to integer
+    // Convert stringacters to integer
     while (i < str.length() && str[i] >= '0' && str[i] <= '9') {
         result = result * 10 + (str[i] - '0');
         i++;
@@ -214,12 +266,12 @@ int stringToInteger(const std::string& str) {
 
 void store_position() {
     string inputString = "2 | whwat is your name ?| pragesh | 3 | 4 | mis | hello | 5 |3| what is my name| pragesh | 4|";
-    char targetChar = '|';
+    string targetstring = '|';
 
-    vector<int> positions; // Vector to store positions of the target character
+    vector<int> positions; // Vector to store positions of the target stringacter
 
     for (size_t i = 0; i < inputString.length(); i++) {
-        if (inputString[i] == targetChar) {
+        if (inputString[i] == targetstring) {
             positions.push_back(i);
         }
     }
@@ -227,7 +279,7 @@ void store_position() {
 
     int total_count = count / 4;
     int total_array[total_count][4];
-    vector<QnA> real_question_array(total_count);
+    vector<QnA> QnA_array(total_count);
     for (int i = 0; i < total_count; i++) {
 
         for (int j = 0; j < 4; j++) {
@@ -242,7 +294,7 @@ void store_position() {
             int startPosition, endPosition;
             if (total_array[i][j] == 2) {
                 startPosition = 0; // Starting position
-                endPosition = 1;   // Ending position (excluding position 305)
+                endPosition = 1;  
             }
             else if (total_array[i][j] == 3) {
 
@@ -260,9 +312,9 @@ void store_position() {
                 endPosition = total_array[i][j];
             }
 
-            char buffer[endPosition - startPosition + 1];
+            string buffer[endPosition - startPosition + 1];
             for (int k = 0; k < endPosition - startPosition + 1; k++) {
-                buffer[k] = inputString[startPosition + k]; // Access and copy each character
+                buffer[k] = inputString[startPosition + k]; // Access and copy each stringacter
             }
             buffer[endPosition - startPosition + 1] = '\0'; // Null-terminate the buffer
 
@@ -273,7 +325,7 @@ void store_position() {
         try {
             int answerInt = stringToInteger(array_que[0]);
             int hello = stringToInteger(array_que[3]);
-            real_question_array[i].add_input(i + 1, array_que[1], array_que[2],hello , answerInt);
+            QnA_array[i].add_input(i + 1, array_que[1], array_que[2],hello , answerInt);
         } catch (const std::invalid_argument& e) {
             cerr << "Invalid argument: " << e.what() << endl;
             // Handle the invalid argument as needed, e.g., provide a default value.
@@ -287,20 +339,26 @@ void store_position() {
 
 
 int main() {
+int QnA::count = 0;
     design();
+int Question_bank[7][5][20];
 store_position() ;
+Question_bank = classifier_function(count);
     int level = 1;
-    char answer;
+    string answer;
     int qn;
     string questions;
    vector<int> already_shown_qn;// for not repeating already shown questions
-    vector<char> answer_options;
+    vector<string> answer_options;
+	
 
     for (int qn = 1; qn <= 20; qn++) {
         cout << "Score: " << points << endl;
-        int qn1 = question_finder(level);
-        cout << qn << "."<<display_question(qn1) << endl;
-        answer_options = answer_options_array(qn1);
+        int qn1  =  question_finder(level ,Question_bank, already_shown_qn);
+		  QnA question = QnA[qn1]; // Accessing a specific question
+        cout << qn << "."<<display_question(question) << endl;
+     
+        answer_options = answer_options_array(question);
 
         shuffle_vector(answer_options);
         for (int i = 0; i < 4; i++) {
@@ -308,7 +366,7 @@ store_position() ;
         }
         cout << "Ans: ";
         cin >> answer;
-        level = check_answer(qn1, answer, level);
+        level = check_answer(qn1, answer, level , question);
     }
 
     float accuracy = (static_cast<float>(points) / 40) * 100; // Convert points to float for accurate division
