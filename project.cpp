@@ -232,7 +232,7 @@ int mt = QnA[i].return_mt();
 int qn = QnA[i].return_qn();
 Question_bank[mt-1][level-1].push_back(qn);
 }
-return Question_bank;
+return Question_bank[7][5][20];
 }
 
 int stringToInteger(const std::string& str) {
