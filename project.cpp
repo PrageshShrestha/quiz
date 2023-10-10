@@ -117,7 +117,7 @@ unsigned int lcg_seed = 12345;
 
     lcg_seed = (LCG_A * lcg_seed + LCG_C) % LCG_M;
     return min + (lcg_seed % (max - min + 1));
-}
+}//needs to be remade
 void design() {
     cout << "QUIZ HUNT" << endl;
 
@@ -222,9 +222,6 @@ int check_answer(int qn, string answer, int level , QnA question) {
         }
     }
 }
-
-
-#include<vector>
 
 int classifier_function(int count, vector<QnA> question2) {
     // Assuming QnA has methods return_level(), return_mt(), and return_qn()
