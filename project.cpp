@@ -12,12 +12,12 @@ using namespace std;
 int points = 0;
 
 class QnA {
-    int qnr;
+    int qnr;//question number
     int mt; // menu type
-    string question_main;
-    string answer;
-    int level;
-    string subject;
+    string question_main;//The question
+    string answer;//Answer to the question
+    int level;//The level of question
+    string subject;//The chosen subject
 
 public:
 
