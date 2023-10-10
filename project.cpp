@@ -6,7 +6,7 @@
 #include <thread>
 #include <chrono>
 #include <vector>
-#include <algorithm> // Include algorithm for std::shuffle
+#include <algorithm> // Include algorithm for shuffle
 using namespace std;
 
 int points = 0;
@@ -100,7 +100,7 @@ vector<string> answer_options_array( QnA question) {
 
 void display_menu() {
     string choice_str;
-    string options[7] = {"MATHS", "PHYSICS", "ENVIRONMENT", "COMPUTER", "COMPUTER", "ENGLISH", "ENGINEERING"};
+    string options[7] = {"MATHS", "PHYSICS", "ENVIRONMENT", "COMPUTER",  "ENGLISH", "ENGINEERING"};
     cout << "Enter the corresponding Number or select one of them to play:" << endl;
     cout << "OPTION:";
     cin >> choice_str;
@@ -224,18 +224,29 @@ int check_answer(int qn, string answer, int level , QnA question) {
 }
 
 
-int classifier_function( int count){
-int Question_bank[7][5][20];
-for(int i=1;i<count ;i++){
-int level = QnA[i].return_level();
-int mt = QnA[i].return_mt();
-int qn = QnA[i].return_qn();
-Question_bank[mt-1][level-1].push_back(qn);
-}
-return Question_bank[7][5][20];
+#include<vector>
+
+int classifier_function(int count, vector<QnA> question2) {
+    // Assuming QnA has methods return_level(), return_mt(), and return_qn()
+    vector<vector<vector<int>>> Question_bank(7, vector<vector<int>>(5, vector<int>(20)));
+
+    for (int i = 0; i < count; i++) {
+        int level = question2[i].return_level();
+        int mt = question2[i].return_mt();
+        int qn = question2[i].return_qnr();
+
+        // Make sure indices are within bounds
+        if (mt >= 1 && mt <= 7 && level >= 1 && level <= 5 && qn >= 1 && qn <= 20) {
+            Question_bank[mt - 1][level - 1][qn - 1] = qn;
+        }
+    }
+
+    // You may want to return the Question_bank here, depending on your requirements
+    return 0; // Modify this return value as needed
 }
 
-int stringToInteger(const std::string& str) {
+
+int stringToInteger(const string& str) {
     int result = 0;
     int sign = 1;
     int i = 0;
@@ -263,25 +274,23 @@ int stringToInteger(const std::string& str) {
     return result * sign;
 }
 
+std::vector<QnA> store_position() {
+    std::string inputString = "2 | whwat is your name ?| pragesh | 3 | 4 | mis | hello | 5 |3| what is my name| pragesh | 4|";
+    char targetstring = '|';
 
-void store_position() {
-    string inputString = "2 | whwat is your name ?| pragesh | 3 | 4 | mis | hello | 5 |3| what is my name| pragesh | 4|";
-    string targetstring = '|';
-
-    vector<int> positions; // Vector to store positions of the target stringacter
+    std::vector<int> positions; // Vector to store positions of the target character
 
     for (size_t i = 0; i < inputString.length(); i++) {
         if (inputString[i] == targetstring) {
             positions.push_back(i);
         }
     }
-    int count = positions.size();
 
-    int total_count = count / 4;
+    int total_count = positions.size() / 4;
     int total_array[total_count][4];
-    vector<QnA> QnA_array(total_count);
-    for (int i = 0; i < total_count; i++) {
+    std::vector<QnA> QnA_array(total_count);
 
+    for (int i = 0; i < total_count; i++) {
         for (int j = 0; j < 4; j++) {
             int num = (i * 4) + j;
             total_array[i][j] = positions[num];
@@ -289,21 +298,18 @@ void store_position() {
     }
 
     for (int i = 0; i < total_count; i++) {
-        string array_que[4];
+        std::string array_que[4];
         for (int j = 0; j < 4; j++) {
             int startPosition, endPosition;
             if (total_array[i][j] == 2) {
                 startPosition = 0; // Starting position
-                endPosition = 1;  
+                endPosition = 1;
             }
             else if (total_array[i][j] == 3) {
-
                 startPosition = 0; // Starting position
                 endPosition = 3;
-
             }
             else if (j == 0 && i != 0) {
-
                 startPosition = total_array[i - 1][3]; // Starting position
                 endPosition = total_array[i][j];
             }
@@ -312,29 +318,22 @@ void store_position() {
                 endPosition = total_array[i][j];
             }
 
-            string buffer[endPosition - startPosition + 1];
-            for (int k = 0; k < endPosition - startPosition + 1; k++) {
-                buffer[k] = inputString[startPosition + k]; // Access and copy each stringacter
-            }
-            buffer[endPosition - startPosition + 1] = '\0'; // Null-terminate the buffer
-
-            string extractedString(buffer); // Convert the buffer to a string
+            std::string extractedString = inputString.substr(startPosition, endPosition - startPosition + 1);
             array_que[j] = extractedString;
         }
 
         try {
             int answerInt = stringToInteger(array_que[0]);
             int hello = stringToInteger(array_que[3]);
-            QnA_array[i].add_input(i + 1, array_que[1], array_que[2],hello , answerInt);
+            QnA_array[i] = QnA(answerInt, array_que[1], array_que[2], hello, 0); // 0 as a placeholder for 'answer'
         } catch (const std::invalid_argument& e) {
-            cerr << "Invalid argument: " << e.what() << endl;
+            std::cerr << "Invalid argument: " << e.what() << std::endl;
             // Handle the invalid argument as needed, e.g., provide a default value.
         }
     }
 
-    cout << "The total questions are: " << total_count << endl;
+    return QnA_array;
 }
-
 
 
 
@@ -342,8 +341,8 @@ int main() {
 int QnA::count = 0;
     design();
 int Question_bank[7][5][20];
-store_position() ;
-Question_bank = classifier_function(count);
+vector<QnA> question2 = store_position();
+Question_bank = classifier_function(count , question2);
     int level = 1;
     string answer;
     int qn;
@@ -355,7 +354,7 @@ Question_bank = classifier_function(count);
     for (int qn = 1; qn <= 20; qn++) {
         cout << "Score: " << points << endl;
         int qn1  =  question_finder(level ,Question_bank, already_shown_qn);
-		  QnA question = QnA[qn1]; // Accessing a specific question
+		  QnA question = question2[qn1]; // Accessing a specific question
         cout << qn << "."<<display_question(question) << endl;
      
         answer_options = answer_options_array(question);
@@ -370,8 +369,29 @@ Question_bank = classifier_function(count);
     }
 
     float accuracy = (static_cast<float>(points) / 40) * 100; // Convert points to float for accurate division
-    cout << "Your Total Score is: " << points << endl;
+    cout << "Your Total Score is:" << points << endl;
     cout << "Accuracy: " << accuracy << "%" << endl;
 
     return 0;
+}
+
+
+
+
+
+
+
+void sound_given()
+{
+  int frequency, duration;
+  frequency = 1000;
+  duration = 1000;
+
+  cout << " frequency (in Hz): ";
+
+  cout << "duration (in milliseconds): ";
+
+  Beep(frequency, duration);
+
+  return 0;
 }
