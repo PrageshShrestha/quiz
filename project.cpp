@@ -106,29 +106,7 @@ void display_menu() {
     cin >> choice_str;
 }
 int Randnum(int min, int max) {
-constexpr unsigned int LCG_A = 1664525;
-constexpr unsigned int LCG_C = 1013904223;
-constexpr unsigned int LCG_M = 65536; // 2^32
-
-
-unsigned int lcg_seed = 12345;
-
-
-
-    lcg_seed = (LCG_A * lcg_seed + LCG_C) % LCG_M;
-    return min + (lcg_seed % (max - min + 1));
-}//needs to be remade
-void design() {
-    cout << "QUIZ HUNT" << endl;
-
-    // Print dots animation
-    for (int i = 0; i < 10; i++) {
-        cout << ".";
-        cout.flush();
-        this_thread::sleep_for(chrono::milliseconds(300));
-    }
-
-    cout << endl;
+	return min + rand() % max;
 }
 
 string display_question(int qn , QnA question) {
