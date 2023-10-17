@@ -22,12 +22,6 @@ class QnA {
 
 public:
 
-  
-
-
-    int getCount() {
-        return count; 
-    }
     void add_input(int qn, string question, string answer_given, int level_given , int mt_given) {
         qnr = qn;
 		
