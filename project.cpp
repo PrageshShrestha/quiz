@@ -22,13 +22,8 @@ class QnA {
 
 public:
 
-  QnA() {
-        int count++; // Increment the count when an object is created
-    }
+  
 
-    ~QnA() {
-        int count--; // Decrement the count when an object is destroyed
-    }
 
     int getCount() {
         return count; 
