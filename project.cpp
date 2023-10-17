@@ -290,7 +290,7 @@ std::vector<QnA> store_position() {
         try {
             int answerInt = stringToInteger(array_que[0]);
             int hello = stringToInteger(array_que[3]);
-            QnA_array[i] = QnA(answerInt, array_que[1], array_que[2], hello, 0); // 0 as a placeholder for 'answer'
+            QnA_array[i] = QnA.addInput(answerInt, array_que[1], array_que[2], hello, 0); // 0 as a placeholder for 'answer'
         } catch (const std::invalid_argument& e) {
             std::cerr << "Invalid argument: " << e.what() << std::endl;
             // Handle the invalid argument as needed, e.g., provide a default value.
