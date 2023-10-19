@@ -146,20 +146,25 @@ int add_point(int level, int points) {
 int question_finder(int level, vector<vector<vector<int>>> Question_bank, vector<int> already_shown_qn, int mt) {
 previous:
     int qn2, num1, num2, num3;
-    num2 = level;
-    num3 = Randnum(0, 19);
+    num2 = level-1;
+    num3 = Randnum(0, 2);
     if (mt == 0) {
-        num1 = Randnum(0, 4);
+        num1 = Randnum(0, 3);
     } else {
         num1 = mt - 1;
     }
     qn2 = Question_bank[num1][num2][num3];
+	
     int size = already_shown_qn.size();
+	
     for (int i = 1; i < size; i++) {
         if (qn2 == already_shown_qn[i - 1]) {
+			
             goto previous;
+			break;
         }
     }
+	
     return qn2;
 }
 
@@ -235,7 +240,7 @@ vector<QnA> store_position() {
 string inputString = "1| question2 | answer2 | 1 | option1 , option2 , option3 , option4| 1| question3 | answer3 | 1 | option1 , option2 , option3 , option4|1| question4 | answer4 | 1| option1 , option2 , option3 , option4|";
 // Add 20 formats for level 1
 
-inputString += "2| question21 | answer21 | 1 | option1 , option2 , option3 , option4| 2| question22 | answer22 | 1 | option1 , option2 , option3 , option4|2| question23 | answer23 | 1| option1 , option2 , option3 , option4|";
+inputString += "1| question21 | answer21 | 1 | option1 , option2 , option3 , option4| 2| question22 | answer22 | 1 | option1 , option2 , option3 , option4|2| question23 | answer23 | 1| option1 , option2 , option3 , option4|";
 // Add 20 formats for level 2
 
 inputString += "3| question41 | answer41 | 1 | option1 , option2 , option3 , option4| 3| question42 | answer42 | 1 | option1 , option2 , option3 , option4|3| question43 | answer43 | 1| option1 , option2 , option3 , option4|";
@@ -399,12 +404,8 @@ int main() {
 	Question_bank = classifier_function(count, question2);
     int choice = display_menu();
 	int level=1;
+     
 
- for (int qn = 1; qn <= 20; qn++) {
-        // Your existing code...
-        cout << "Question Bank:" << endl;
-        printQuestionBank(Question_bank);
-    }
 
   
     for (int qn = 1; qn <= 20; qn++) {
@@ -418,6 +419,7 @@ int main() {
         int actual_answer = display_question(question);
 
         cout << endl<< "  Ans: ";
+		
         cin >> answer;
         level = check_answer(actual_answer, qn1, stringToInteger(answer), level, question);
     }
