@@ -22,6 +22,7 @@ int Randnum(int min, int max) {
 }
 
 class QnA {
+ static int total_objects;
     int qnr; // question number
     int mt; // menu type
     string question_main; // The question
@@ -31,8 +32,12 @@ class QnA {
     string options[4];
 
 public:
-    void add_input(int qn, string question, int level_given, int mt_given, string option1) {
-        qnr = qn;
+ QnA() {
+  qnr = total_objects + 1;
+        total_objects++; // Increment the total_objects count when a new object is created
+    }
+    void add_input(int mt_given,string question, int level_given, string option1) {
+       
         mt = mt_given;
         question_main = question;
         level = level_given;
@@ -103,8 +108,11 @@ public:
     int return_level() {
         return level;
     }
+	 static int get_total_objects() { // Static member function to access the total count
+        return total_objects;
+    }
 };
-
+int QnA::total_objects = 0;
 int display_question(QnA question) {
     int answer;
     cout << question.return_question() << endl;
@@ -135,7 +143,7 @@ int add_point(int level, int points) {
 
 // Shuffle vector
 
-int question_finder(int level, vector<vector<vector<int>>> &Question_bank, vector<int> &already_shown_qn, int mt = 0) {
+int question_finder(int level, vector<vector<vector<int>>> Question_bank, vector<int> already_shown_qn, int mt) {
 previous:
     int qn2, num1, num2, num3;
     num2 = level;
@@ -163,7 +171,7 @@ int check_answer(int ans, int qn, int answer, int level, QnA question) {
         points = add_point(level, points); // Update points using the add_point function
         cout << "Correct  ";
         if (level < 5) {
-            return level++;
+            return level+1;
         } else {
             return level;
         }
@@ -171,7 +179,7 @@ int check_answer(int ans, int qn, int answer, int level, QnA question) {
         if (qn % 2 == 0) {
             cout << "Sorry. The answer is: " << ans << "." << real_ans;
             if (level > 1) {
-                return level--;
+                return level-1;
             } else {
                 return level;
             }
@@ -224,9 +232,22 @@ int stringToInteger(string &str) {
 }
 
 vector<QnA> store_position() {
-    string inputString = "2 | whwat is your name ?| pragesh | 3 | hello , how are you , hi , pragesh| 4 | mis | hello | 5 | hello , how are you , hi , pragesh|3| what is my name| pragesh | 4| hello , how are you , hi , pragesh|";
-    char targetstring = '|';
+string inputString = "1| question2 | answer2 | 1 | option1 , option2 , option3 , option4| 1| question3 | answer3 | 1 | option1 , option2 , option3 , option4|1| question4 | answer4 | 1| option1 , option2 , option3 , option4|";
+// Add 20 formats for level 1
 
+inputString += "2| question21 | answer21 | 1 | option1 , option2 , option3 , option4| 2| question22 | answer22 | 1 | option1 , option2 , option3 , option4|2| question23 | answer23 | 1| option1 , option2 , option3 , option4|";
+// Add 20 formats for level 2
+
+inputString += "3| question41 | answer41 | 1 | option1 , option2 , option3 , option4| 3| question42 | answer42 | 1 | option1 , option2 , option3 , option4|3| question43 | answer43 | 1| option1 , option2 , option3 , option4|";
+// Add 20 formats for level 3
+
+inputString += "4| question61 | answer61 | 1 | option1 , option2 , option3 , option4| 4| question62 | answer62 | 1 | option1 , option2 , option3 , option4|4| question63 | answer63 | 1| option1 , option2 , option3 , option4|";
+// Add 20 formats for level 4
+
+inputString += "5| question81 | answer81 | 1 | option1 , option2 , option3 , option4| 5| question82 | answer82 | 1 | option1 , option2 , option3 , option4|5| question83 | answer83 | 1| option1 , option2 , option3 , option4|";
+// Add 20 formats for level 5
+
+ char targetstring = '|';
     vector<int> positions; // Vector to store positions of the target character
 
     for (size_t i = 0; i < inputString.length(); i++) {
@@ -249,7 +270,7 @@ vector<QnA> store_position() {
     for (int i = 0; i < total_count; i++) {
         string array_que[4];
         for (int j = 0; j < 5; j++) {
-            int startPosition, endPosition;
+            int startPosition, endPosition; 
             if (total_array[i][j] == 2) {
                 startPosition = 0; // Starting position
                 endPosition = 1;
@@ -272,7 +293,7 @@ vector<QnA> store_position() {
             int answerInt = stringToInteger(array_que[0]);
             int hello = stringToInteger(array_que[3]);
 
-            QnA_array[i].add_input(answerInt, array_que[1], hello, 0, array_que[4]);
+            QnA_array[i].add_input(answerInt, array_que[1], hello, array_que[4]);
             // 0 as a placeholder for mt level
         } catch (invalid_argument &e) {
             cerr << "Invalid argument: " << e.what() << endl;
@@ -283,9 +304,10 @@ vector<QnA> store_position() {
     return QnA_array;
 }
 
-vector<vector<vector<int>>> classifier_function(int count, vector<QnA> &question2) {
+vector<vector<vector<int>>> classifier_function(int count, vector<QnA> question2) {
     // Assuming QnA has methods return_level(), return_mt(), and return_qn()
     vector<vector<vector<int>>> Question_bank(7, vector<vector<int>>(5, vector<int>(20)));
+    vector<vector<int>> total_counts(7, vector<int>(5));
 
     for (int i = 0; i < count; i++) {
         int level = question2[i].return_level();
@@ -293,8 +315,16 @@ vector<vector<vector<int>>> classifier_function(int count, vector<QnA> &question
         int qn = question2[i].return_qnr();
 
         // Make sure indices are within bounds
-        if (mt >= 1 && mt <= 7 && level >= 1 && level <= 5 && qn >= 1 && qn <= 20) {
-            Question_bank[mt - 1][level - 1][qn - 1] = qn;
+        if (mt >= 1 && mt <= 7 && level >= 1 && level <= 5) {
+			for(int j=0;j<7;j++){
+				for(int k = 0;k<5;k++){
+				if(j == mt-1 && k==level-1){
+					int l = total_counts[j][k];
+            Question_bank[mt - 1][level - 1][l] = qn;
+			          total_counts[j][k] = total_counts[j][k] +1;
+				}
+				}
+			}
         }
     }
 
@@ -326,29 +356,68 @@ int display_menu() {
 
     return choice;
 }
+void printQuestionBank(const vector<vector<vector<int>>>& Question_bank) {
+    for (size_t i = 0; i < Question_bank.size(); i++) {
+        for (size_t j = 0; j < Question_bank[i].size(); j++) {
+            for (size_t k = 0; k < Question_bank[i][j].size(); k++) {
+                cout << "Question_bank[" << i << "][" << j << "][" << k << "]: " << Question_bank[i][j][k] << endl;
+            }
+        }
+    }
+}
+void backend(){
+		
+	 /*
+	 for (int qn = 1; qn <= 20; qn++) {
+        // Your existing code...
+        cout << "Question Bank:" << endl;
+        printQuestionBank(Question_bank);
+    }
+
+		for (auto &q : question2) {
+    cout << "Question Number: " << q.return_qnr() << endl;
+    cout << "Menu Type: " << q.return_mt() << endl;
+    cout << "Main Question: " << q.return_question() << endl;
+    cout << "Level: " << q.return_level() << endl;
+		}
+  
+}*/
+	
+	
+}
 
 int main() {
-    int count = 10;
-    vector<vector<vector<int>>> Question_bank(7, vector<vector<int>>(5, vector<int>(20)));
+    
+    vector<vector<vector<int>>> Question_bank(7, vector<vector<int>>(5, vector<int>(20)));//menutype , diffculty , question
     vector<QnA> question2 = store_position();
-    Question_bank = classifier_function(count, question2);
-    int level = 1;
-    string answer;
+    
     int qn;
-    string questions;
+    
     vector<int> already_shown_qn; // for not repeating already shown questions
-
+    int count= QnA::get_total_objects();
+    cout << "Total number of objects created: " << count << endl;
+	Question_bank = classifier_function(count, question2);
     int choice = display_menu();
+	int level=1;
+
+ for (int qn = 1; qn <= 20; qn++) {
+        // Your existing code...
+        cout << "Question Bank:" << endl;
+        printQuestionBank(Question_bank);
+    }
+
+  
     for (int qn = 1; qn <= 20; qn++) {
-        cout << endl
-             << "Score: " << points << endl;
-        int qn1 = question_finder(level, Question_bank, already_shown_qn);
+		
+    string answer;
+        cout << endl<< "Score: " << points << endl;
+        int qn1 = question_finder(level, Question_bank, already_shown_qn , choice);
+		
         QnA question = question2[qn1]; // Accessing a specific question
         cout << qn << ". ";
         int actual_answer = display_question(question);
 
-        cout << endl
-             << "  Ans: ";
+        cout << endl<< "  Ans: ";
         cin >> answer;
         level = check_answer(actual_answer, qn1, stringToInteger(answer), level, question);
     }
@@ -360,3 +429,4 @@ int main() {
 
     return 0;
 }
+ 
