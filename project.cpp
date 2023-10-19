@@ -8,6 +8,9 @@
 #include <thread>
 #include <chrono>
 #include <vector>
+#include <unistd.h>
+// for Beep
+
 #include <algorithm> // Include algorithm for shuffle
 using namespace std;
 
@@ -147,7 +150,7 @@ int question_finder(int level, vector<vector<vector<int>>> Question_bank, vector
 previous:
     int qn2, num1, num2, num3;
     num2 = level-1;
-    num3 = Randnum(0, 2);
+    num3 = Randnum(0, 19);
     if (mt == 0) {
         num1 = Randnum(0, 3);
     } else {
@@ -421,6 +424,7 @@ int main() {
         cout << endl<< "  Ans: ";
 		
         cin >> answer;
+		cout << '\a'<<"beeped"<<endl;
         level = check_answer(actual_answer, qn1, stringToInteger(answer), level, question);
     }
 
