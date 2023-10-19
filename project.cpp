@@ -1,16 +1,8 @@
 #include <iostream>
 #include <random>
 #include <string>
-#include <fstream>
-#include <cstdlib>
 #include <sstream> // Include the header for stringstream
 #include <ctime>
-#include <thread>
-#include <chrono>
-#include <vector>
-#include <unistd.h>
-// for Beep
-
 #include <algorithm> // Include algorithm for shuffle
 using namespace std;
 
@@ -177,7 +169,7 @@ int check_answer(int ans, int qn, int answer, int level, QnA question) {
     if (real_answer == answer) {
         int st_var = question.return_mt();
         points = add_point(level, points); // Update points using the add_point function
-        cout << "Correct  ";
+        cout << "  Awesome! That's correct!";
         if (level < 5) {
             return level+1;
         } else {
@@ -185,7 +177,7 @@ int check_answer(int ans, int qn, int answer, int level, QnA question) {
         }
     } else {
         if (qn % 2 == 0) {
-            cout << "Sorry. The answer is: " << ans << "." << real_ans;
+            cout << "Oops. The answer is: " << ans << "." << real_ans;
             if (level > 1) {
                 return level-1;
             } else {
@@ -346,7 +338,7 @@ int display_menu() {
     int choice = 0;
 
     while (choice < 1 || choice > 6) {
-        cout << "Enter the corresponding Number or select one of them to play:" << endl;
+        cout << "Select the subject you want to play:" << endl;
         for (int i = 1; i <= 6; i++) {
             cout << i << ". " << options[i - 1] << endl;
         }
@@ -358,7 +350,7 @@ int display_menu() {
 
         // Check if the input is a valid option
         if (choice < 1 || choice > 6) {
-            cout << "Invalid option. Please select a valid option." << endl;
+            cout << "Invalid choice! Please select a valid option." << endl;
         }
     }
 
@@ -403,18 +395,18 @@ int main() {
     
     vector<int> already_shown_qn; // for not repeating already shown questions
     int count= QnA::get_total_objects();
-    cout << "Total number of objects created: " << count << endl;
+    cout << "Total number of questions created: " << count << endl;
 	Question_bank = classifier_function(count, question2);
     int choice = display_menu();
 	int level=1;
      
 
 
-  
+  cout << endl<< "ACTUAL GAME STARTS. शु स्वागतम् ." <<endl;
     for (int qn = 1; qn <= 20; qn++) {
 		
     string answer;
-        cout << endl<< "Score: " << points << endl;
+        cout << endl<< "Your Score: " << points << endl;
         int qn1 = question_finder(level, Question_bank, already_shown_qn , choice);
 		
         QnA question = question2[qn1]; // Accessing a specific question
@@ -424,14 +416,14 @@ int main() {
         cout << endl<< "  Ans: ";
 		
         cin >> answer;
-		cout << '\a'<<"beeped"<<endl;
+		cout << '\a'<<endl;
         level = check_answer(actual_answer, qn1, stringToInteger(answer), level, question);
     }
 
     float accuracy = (static_cast<float>(points) / 40) * 100; // Convert points to float for accurate division
     cout << endl
          << "Your Total Score is: " << points << endl;
-    cout << "Accuracy: " << accuracy << "%" << endl;
+    cout << "Your Accuracy: " << accuracy << "%" << endl;
 
     return 0;
 }
