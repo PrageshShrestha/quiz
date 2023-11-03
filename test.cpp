@@ -9,8 +9,8 @@
 #include <algorithm> // Include algorithm for shuffle
 #include<iostream>
 #include<windows.h>
-#include<conio.h>
 #include<thread>
+#include<conio.h>
 #include<stdlib.h>
 #include<numeric>
 
@@ -19,7 +19,7 @@ using namespace std;
 class QnA {
     string question;
     string answer;
-    int points = 0;
+    static int point;
     vector<string> options;
     public:
         void getData(string *q, string *a, vector<string> o) {
@@ -30,17 +30,27 @@ class QnA {
         }
         void pointAdd(bool x){
             if (x){
-                points += 1;
+                point += 1;
             }
             else{
-                points += 1;
+                point += 1;
             }
         }
         void print(int *l) {
             char key = 0;
             int option = 0;
             do{
-                system("cls");
+                //timer
+                system("CLS");
+                int timeLimit = 10; // Set the time limit in seconds
+                auto startTime = chrono::steady_clock::now();
+                auto endTime = startTime + chrono::seconds(timeLimit);
+
+                while (chrono::steady_clock::now() < endTime){
+                    // Calculate remaining time
+                    int remainingTime = chrono::duration_cast<chrono::seconds>(endTime - chrono::steady_clock::now()).count();
+                    cout << "Time remaining: " << remainingTime << " seconds\r" << std::flush;
+                 }
                 cout << question << '\n';
                 for (int i = 0; i < 4; i++){
                     if (i == option){
@@ -51,7 +61,7 @@ class QnA {
                 key = _getch(); 
             }while(key != '\r');
             if (answer == options[option]){
-                points+= *l;
+                point += *l;
                 if (*l != 5){
                     *l++;
                 }
@@ -66,22 +76,7 @@ class QnA {
 //[level][questionNumber]
 QnA questionBank[5][20];
 
-int timer() {
-    int timeLimit = 10; // Set the time limit in seconds
-    auto startTime = chrono::steady_clock::now();
-    auto endTime = startTime + chrono::seconds(timeLimit);
 
-    while (chrono::steady_clock::now() < endTime)
-    {
-        // Calculate remaining time
-        int remainingTime = chrono::duration_cast<chrono::seconds>(endTime - chrono::steady_clock::now()).count();
-        cout << "Time remaining: " << remainingTime << " seconds\r" << std::flush;
-        this_thread::sleep_for(chrono::milliseconds(1000)); // Wait for 1 second
-    }
-
-    cout << "Time's up!!!!!!!" << endl;
-    return 0;
-}
 
 
 int menu() {
@@ -240,13 +235,10 @@ void displayQuestion() {
 
 }
 
-
+int QnA::point;
 int main(){
     int level;
     int subjectCode = menu();
     loadQuestion(subjectCode);
-    thread th1(displayQuestion);
-    thread th2(timer);
-    th1.join();
-    th2.join();
+    displayQuestion();
 }
