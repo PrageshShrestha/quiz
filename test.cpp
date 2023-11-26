@@ -14,63 +14,99 @@
 #include<stdlib.h>
 #include<numeric>
 
+
 using namespace std;
 
+
+static int questionNumber{1};
 class QnA {
     string question;
     string answer;
     static int point;
     vector<string> options;
-    public:
-        void getData(string *q, string *a, vector<string> o) {
-            question = *q;
-            answer = *a;
-            options = o;
-            
-        }
-        void pointAdd(bool x){
-            if (x){
-                point += 1;
-            }
-            else{
-                point += 1;
-            }
-        }
-        void print(int *l) {
-            char key = 0;
-            int option = 0;
-            do{
-                //timer
-                system("CLS");
-                int timeLimit = 10; // Set the time limit in seconds
-                auto startTime = chrono::steady_clock::now();
-                auto endTime = startTime + chrono::seconds(timeLimit);
+public:
+    void getData(string* q, string* a, vector<string> o) {
+        question = *q;
+        answer = *a;
+        options = o;
 
-                while (chrono::steady_clock::now() < endTime){
-                    // Calculate remaining time
-                    int remainingTime = chrono::duration_cast<chrono::seconds>(endTime - chrono::steady_clock::now()).count();
-                    cout << "Time remaining: " << remainingTime << " seconds\r" << std::flush;
-                 }
-                cout << question << '\n';
-                for (int i = 0; i < 4; i++){
-                    if (i == option){
-                        cout << u8"\u2794";
-                    }
-                    cout << options[i];
-                }
-                key = _getch(); 
-            }while(key != '\r');
-            if (answer == options[option]){
-                point += *l;
-                if (*l != 5){
-                    *l++;
-                }
-            }
-            else if(*l != 1){
-                *l--;
-            }
-            cout << endl;
+    }
+    void pointAdd(bool x) {
+        if (x) {
+            point += 1;
         }
+        else {
+            point += 1;
+        }
+    }
+    void print(int* l) {
+        char key = 0;
+        int option = 0;
+        do {
+            key = 0;
+            //timer
+            system("CLS");
+            //int timeLimit = 10; // Set the time limit in seconds
+            //auto startTime = chrono::steady_clock::now();
+            //auto endTime = startTime + chrono::seconds(timeLimit);
+
+            //while (chrono::steady_clock::now() < endTime) {
+            //    // Calculate remaining time
+            //    int remainingTime = chrono::duration_cast<chrono::seconds>(endTime - chrono::steady_clock::now()).count();
+            //    cout << "Time remaining: " << remainingTime << " seconds\r" << std::flush;
+            //}
+            cout << "Level: " << *l + 1 << endl;
+            cout << questionNumber << ")";
+            cout << question << '\n';
+            for (int i = 0; i < 4; i++) {
+                if (i == option) {
+                    cout << u8"\u2794";
+                }
+                cout << options[i] << endl;
+            }
+            while (key == 0){
+                key = _getch();
+            }
+            
+            switch (key) {
+                case 72:
+                    if (option != 0){
+                        option--;
+                    }
+                    else{
+                        option = 3;
+                    }
+                    break;
+                case 80:
+                    if (option != 3){
+                        option++;
+                    }
+                    else {
+                        option = 0;
+                    }
+                    break;
+                default:
+                    break;
+            }   
+        } while (key != '\r');
+        if (answer == options[option]) {
+            point += (*l) + 1;
+            if (*l != 4) {
+                (*l)++;
+            }
+            cout << "Your answer is correct" << endl; 
+        }
+        else  {
+            if (*l != 0){
+                (*l)--;
+            }
+            cout << "Your answer is incorrect\nThe correct answer is " << answer << endl;
+        }
+        cout<< "You have " << point << " points\n";
+        _getch();
+        cout << endl;
+        questionNumber++;
+    }
 };
 
 //[level][questionNumber]
@@ -83,7 +119,7 @@ int menu() {
     char key = 0;
     int s = 0;
     system("CLS");
-    do{
+    do {
         key = 0;
         system("CLS");
         if (s == 0)
@@ -101,44 +137,49 @@ int menu() {
         else
             s = 0;
         while (key == 0) {
-            key = getch();
+            key = _getch();
         }
         switch (key) {
-            case 72:
-                if (s != 0)
-                    s--;
-                else
-                    s = 5;
-                break;
-            case 80:
-                if (s != 5)
-                    s++;
-                else
-                    s = 0;
-                break;
+        case 72:
+            if (s != 0)
+                s--;
+            else
+                s = 5;
+            break;
+        case 80:
+            if (s != 5)
+                s++;
+            else
+                s = 0;
+            break;
         }
-    }while (key != '\r');
+    } while (key != '\r');
     return s;
 }
 
 void loadQuestion(int subjectCode) {
-    
+
     //for opening the file in UTF-8
     ifstream questionFile;
-    questionFile.open("questions.txt");
+    string File = "question" + to_string(subjectCode) + ".txt";
+    questionFile.open(File, ios::in);
     string unparsedString;
     int qN;
     vector<string> option;
     int level;
     int subject;
-    //subject_code)qn)level)question|option1|option2|option3|option4|answer\
-    question format
+    //subject_code)qn)level)question|option1|option2|option3|option4|answer\question format
     char temp[100];
+    if (!questionFile.is_open()){
+        cout<<"File not found\n";
+    }
+    else{
+        
     while (getline(questionFile, unparsedString)) {
         int counter = 0;
         int i = 0;
-        
-        while(unparsedString[counter] != ')'){
+
+        while (unparsedString[counter] != ')') {
             temp[i] = unparsedString[counter];
             counter++;
             i++;
@@ -147,66 +188,69 @@ void loadQuestion(int subjectCode) {
         counter++;
         i = 0;
         subject = stoi(temp);
-        if (subject == subjectCode){
-            while(unparsedString[counter] != ')'){
-            temp[i] = unparsedString[counter];
-            counter++;
-            i++;
-        }
-        temp[i] = '\0';
-        qN = stoi(temp);
-        counter++;
-        i = 0;
-        while(unparsedString[counter] != ')'){
-            temp[i] = unparsedString[counter];
-            counter++;
-            i++;
-        }
-        temp[i] = '\0';
-        level = stoi(temp);
-        counter++;
-        i = 0;
-        char temp3[50];
-
-        while(unparsedString[counter] != '|'){
-            temp3[i] = unparsedString[counter];
-            counter++;
-            i++;
-        }
-        temp[i] = '\0';
-        string question{temp3};
-        counter++;
-        i = 0;
-        
-        char temp1[4][50];
-        
-        for (int j = 0; j < 4; j++){
-            while(unparsedString[counter] != '|'){
-                temp1[j][i] = unparsedString[counter];
+        if (subject == subjectCode) {
+            while (unparsedString[counter] != ')') {
+                temp[i] = unparsedString[counter];
                 counter++;
                 i++;
             }
-            temp1[j][i] = '\0';
-            option.push_back(temp1[j]);
+            temp[i] = '\0';
+            qN = stoi(temp);
             counter++;
             i = 0;
-        }
-
-        while(unparsedString[counter] != '\\'){
-            temp[i] = unparsedString[counter];
+            while (unparsedString[counter] != ')') {
+                temp[i] = unparsedString[counter];
+                counter++;
+                i++;
+            }
+            temp[i] = '\0';
+            level = stoi(temp);
             counter++;
-            i++;
-        }
-        temp[i] = '\0';
-        string answer{temp};
-        counter++;
-        i = 0;
-        questionBank[level][qN].getData(&question, &answer, option);
+            i = 0;
+
+            char temp[50]{};
+
+            while (unparsedString[counter] != '|') {
+                temp[i] = unparsedString[counter];
+                counter++;
+                i++;
+            }
+            temp[i] = '\0';
+            string question = temp;
+            counter++;
+            i = 0;
+
+            char temp1[4][50];
+
+            for (int j = 0; j < 4; j++) {
+                while (unparsedString[counter] != '|') {
+                    temp1[j][i] = unparsedString[counter];
+                    counter++;
+                    i++;
+                }
+                temp1[j][i] = '\0';
+                option.push_back(temp1[j]);
+                counter++;
+                i = 0;
+            }
+
+            while (unparsedString[counter] != '\\') {
+                temp[i] = unparsedString[counter];
+                counter++;
+                i++;
+            }
+            temp[i] = '\0';
+            string answer{ temp };
+            counter++;
+            i = 0;
+            questionBank[level][qN].getData(&question, &answer, option);
+            option.clear();
         }
     }
     questionFile.close();
+    }
 }
-int random(int min, int max){
+int random(int min, int max) {
     random_device rd;
     uniform_int_distribution<int> dist(min, max);
     return dist(rd);
@@ -221,22 +265,20 @@ void displayQuestion() {
         }
     }
     system("CLS");
-    for (int i = 0; i <= 20; i++) {
-        do{
-            questionNumber = random(0,19);
-            cout << questionNumber;
-        }while (!count(questionAvailable[level].begin(),questionAvailable[level].end(), questionNumber));
+    for (int i = 0; i < 20; i++) {
+        do {
+            questionNumber = random(0, 19);
+        } while (!count(questionAvailable[level].begin(), questionAvailable[level].end(), questionNumber));
+        vector<int>::iterator new_end;
+        new_end = remove(questionAvailable[level].begin(), questionAvailable[level].end(), questionNumber);
+        questionAvailable[level].erase(new_end, questionAvailable[level].end());
         questionBank[level][questionNumber].print(&level);
-
-        cout << "HI";
-
+        
     }
-    this_thread::sleep_for(chrono::milliseconds(1));
-
 }
 
-int QnA::point;
-int main(){
+int QnA::point = 0;
+int main() {
     int level;
     int subjectCode = menu();
     loadQuestion(subjectCode);
