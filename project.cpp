@@ -231,7 +231,8 @@ int stringToInteger(string &str) {
     return result * sign;
 }
 
-vector<QnA> store_position() {
+vector<QnA> store_position() {//menutype | question | answer | diffculty | options|..
+	
 string inputString = "1| question2 | answer2 | 1 | option1 , option2 , option3 , option4| 1| question3 | answer3 | 1 | option1 , option2 , option3 , option4|1| question4 | answer4 | 1| option1 , option2 , option3 , option4|";
 // Add 20 formats for level 1
 
