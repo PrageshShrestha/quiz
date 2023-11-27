@@ -232,20 +232,21 @@ int stringToInteger(string &str) {
 }
 
 vector<QnA> store_position() {//menutype | question | answer | diffculty | options|..
+	//1-> Maths , 2->Physics , 3-> Environment , 4->Computer , 5-> English , 6-> Enginnering
 	
-string inputString = "1| question2 | answer2 | 1 | option1 , option2 , option3 , option4| 1| question3 | answer3 | 1 | option1 , option2 , option3 , option4|1| question4 | answer4 | 1| option1 , option2 , option3 , option4|";
+string inputString = "1| Maths question x + y | 2 | 1 | 1 , 2 , 3 , 4| 1| maths question 2x + 2y | 4 | 1 | 1 , option2 , option3 , option4|1| math question 4 | answer4 | 1| option1 , option2 , option3 , option4|";
 // Add 20 formats for level 1
 
-inputString += "1| question21 | answer21 | 1 | option1 , option2 , option3 , option4| 2| question22 | answer22 | 1 | option1 , option2 , option3 , option4|2| question23 | answer23 | 1| option1 , option2 , option3 , option4|";
+inputString += "1| question physics 2 | answer21 | 1 | option1 , option2 , option3 , option4| 2| question physics 1 | answer22 | 1 | option1 , option2 , option3 , option4|2| physics question 3 | answer23 | 1| option1 , option2 , option3 , option4|";
 // Add 20 formats for level 2
 
-inputString += "3| question41 | answer41 | 1 | option1 , option2 , option3 , option4| 3| question42 | answer42 | 1 | option1 , option2 , option3 , option4|3| question43 | answer43 | 1| option1 , option2 , option3 , option4|";
+inputString += "3| enve question 3 | answer41 | 1 | option1 , option2 , option3 , option4| 3| enve question 4 | answer42 | 1 | option1 , option2 , option3 , option4|3| enve question 43 | answer43 | 1| option1 , option2 , option3 , option4|";
 // Add 20 formats for level 3
 
-inputString += "4| question61 | answer61 | 1 | option1 , option2 , option3 , option4| 4| question62 | answer62 | 1 | option1 , option2 , option3 , option4|4| question63 | answer63 | 1| option1 , option2 , option3 , option4|";
+inputString += "4| computer question 61 | answer61 | 1 | option1 , option2 , option3 , option4| 4| computer question 2 | answer62 | 1 | option1 , option2 , option3 , option4|4| what pointers do in oop? | answer63 | 1| option1 , option2 , option3 , option4|";
 // Add 20 formats for level 4
 
-inputString += "5| question81 | answer81 | 1 | option1 , option2 , option3 , option4| 5| question82 | answer82 | 1 | option1 , option2 , option3 , option4|5| question83 | answer83 | 1| option1 , option2 , option3 , option4|";
+inputString += "5| english question ?  | answer81 | 1 | option1 , option2 , option3 , option4| 5| where are syllable used? | answer82 | 1 | option1 , option2 , option3 , option4|5| this is english que, find the mistake in verbs here: | answer83 | 1| option1 , option2 , option3 , option4|";
 // Add 20 formats for level 5
 
  char targetstring = '|';
