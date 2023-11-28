@@ -1,4 +1,4 @@
-//doesn't work on non windows system
+
 //should return ascii_value for system
 #include <random>
 #include <string>
@@ -7,12 +7,13 @@
 #include <codecvt> 
 #include <ctime>
 #include <algorithm> // Include algorithm for shuffle
-#include<iostream>
-#include<windows.h>
-#include<thread>
-#include<conio.h>
-#include<stdlib.h>
-#include<numeric>
+#include <iostream>
+#include <windows.h>
+#include <thread>
+#include <conio.h>
+#include <stdlib.h>
+#include <numeric>
+#include <time.h>
 
 
 using namespace std;
@@ -31,13 +32,8 @@ public:
         options = o;
 
     }
-    void pointAdd(bool x) {
-        if (x) {
-            point += 1;
-        }
-        else {
-            point += 1;
-        }
+    int sendPoint(){
+        return point;
     }
     void print(int* l) {
         char key = 0;
@@ -106,6 +102,7 @@ public:
         _getch();
         cout << endl;
         questionNumber++;
+
     }
 };
 
@@ -157,6 +154,11 @@ int menu() {
     return s;
 }
 
+void displayScore(){
+    int score = questionBank[0][0].sendPoint();
+    cout << "You have scored" << score;
+}
+
 void loadQuestion(int subjectCode) {
 
     //for opening the file in UTF-8
@@ -168,7 +170,8 @@ void loadQuestion(int subjectCode) {
     vector<string> option;
     int level;
     int subject;
-    //subject_code)qn)level)question|option1|option2|option3|option4|answer\question format
+    /*subject_code)qn)level)question|option1|option2|option3|option4|answer\
+    question format*/
     char temp[100];
     if (!questionFile.is_open()){
         cout<<"File not found\n";
@@ -283,4 +286,5 @@ int main() {
     int subjectCode = menu();
     loadQuestion(subjectCode);
     displayQuestion();
+    displayScore();
 }
