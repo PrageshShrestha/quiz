@@ -1,0 +1,373 @@
+1)1)1)What is the divergence of a vector field?| The flux
+| The circulation
+| The divergence density
+| The curl| The divergence density|
+1)2)1)What does the derivative of a vector function represent?|Speed along the curve
+|Slope of the curve
+|Tangent vector to the curve
+|Area under the curve| Tangent vector to the curve|
+1)3)1)What is a property of the Beta function?
+|B(a,b)=B(b,a)
+|B(a,b)=a+b
+|B(a,b)=a⋅b
+|B(a,b)=1/(a+b) |B(a,b)=B(b,a)
+1)4)1)Surface integrals are used in the computation of..... | surface area only | volume of solid enclosed by surface only | both surface area and volume of solid enclosed by the surface | volume of revolution | both surface area and volume of solid enclosed by the surface |
+
+1)5)1)If F is the vector field , then its curl is given by.... | ∇ . F | ∇ x F | ∇ F | F x ∇ | ∇ x F |
+
+1)6)1)The conventional spherical coordinates are.... | (θ, z, r)| (ρ, ∅, θ)| (ρ, θ, ∅) | (θ, ρ, ∅, )|(ρ, θ, ∅)|
+1)7)1)If F is the vector field , then its divergence is given by.... | ∇ . F | ∇ x F | ∇ F | F x ∇ | ∇ . F |
+
+1)8)1)The rate at which a curve curves is called its.... | curvature | radius of curvature | torsion | tangent | curvature |
+1)9)1) What term is used to describe the measure of a curve's deviation from a straight line? 
+| slope | Curvature | Tangent | Gradient | Curvature | 
+
+1)10)1) A vector field H=Ai+Bj+Ck is conservative if and only if...
+| ∇×H=0 | ∇×H=2 | ∇⋅H=0 | ∇⋅H=1 | ∇×H=0 |
+ 
+
+1)11)1)The primitive period of h(x)=cos(3x) is... | π/3 | π/2 | π | 2π | π/2 |
+1)12)1)How is the dot product of two vectors related to their magnitudes and the angle between them?
+| A ⋅ B = |A| × |B| × cos(θ)
+| A ⋅ B = |A| + |B| + cos(θ)
+| A ⋅ B = |A| × |B| × sin(θ)
+| A ⋅ B = |A| × |B| × tan(θ)| A ⋅ B = |A| × |B| × cos(θ)|
+
+1)13)1)What is the Laplace expansion used for in matrix algebra?
+| Finding determinants
+| Solving linear systems
+| Calculating eigenvalues
+| Matrix factorization| Finding determinants|
+
+1)14)1)What is the significance of the critical points in the context of optimization problems?
+| Points where the function is undefined
+| Points where the function reaches its maximum or minimum
+| Points where the function is continuous
+| Points where the function is differentiable| Points where the function reaches its maximum or minimum|
+
+1)15)1)What is the role of the Jacobian matrix in multivariable calculus?
+| Representing the gradient vector
+| Describing the rate of change of a vector-valued function
+| Solving systems of linear equations
+| Evaluating line integrals| Describing the rate of change of a vector-valued function|
+1)16)1)What is the solution to the differential equation dy/dx = 2x? | y = x^2 | y = x^2 + C | y = x^2 + 1 | y = 2x | y = x^2 + C |
+
+1)17)1)What is the limit of the function f(x) = (3x^2 + 2x - 1)/(2x^2 - x + 1) as x approaches infinity? | 3/2 | 2/3 | 1/2 | 1 | 3/2 |
+
+1)18)1)How does the determinant of a matrix change under scalar multiplication of one of its rows? | It remains the same | Doubles | Halves | Becomes zero| It remains the same|
+
+1)19)1)If f(x) = sin(2x), what is the period of the function? | π | 2π | 3π | π/2 | π |
+
+1)20)1)What is the concept of eigenvalues and eigenvectors used for in linear algebra? | Diagonalizing matrices | Solving systems of linear equations | Finding the determinant of a matrix | Rotating vectors in space| Diagonalizing matrices|
+
+1)21)2)How are the Beta and Gamma functions related?|
+B(a,b)=Γ(a+b) |
+B(a,b)=Γ(a)⋅Γ(b)|
+B(a,b)=Γ(b)Γ(a)||
+B(a,b)=Γ(a−b)| B(a,b)=Γ(a)⋅Γ(b)|
+
+
+1)22)2)What coordinate systems are involved in triple integrals?
+|Rectangular, cylindrical, and polar
+| Polar, cylindrical, and spherical
+| Rectangular, cylindrical, and spherical
+| Polar, spherical, and cylindrical| Rectangular, cylindrical, and spherical|
+
+1)23)2)What is the Chain Rule used for?
+| Calculating limits
+| Evaluating partial derivatives
+| Finding indefinite integrals
+| Solving differential equations| Evaluating partial derivatives|
+
+
+1)24)2)What is the equation relating spherical coordinates to Cartesian and cylindrical coordinates?
+|x=ρsin(ϕ)cos(θ)
+|y=ρsin(ϕ)sin(θ)
+|z=ρcos(ϕ)
+| All of the above| All of the above |
+1)25)2)What type of functions can be represented by Fourier series?| Linear functions|Non-periodic functions|Periodic functions|Polynomial functions| Periodic functions|
+1)26)2)What does Euler’s formula relate to Fourier series?| Exponential functions| Trigonometric functions| Logarithmic functions| Rational functions|| Trigonometric functions|
+
+
+
+1)27)2)The smallest period of a function f(x) is called the...... | transition period | oscillatory period| primitive period| half-life period| primitive period |
+1)28)2)If g(x, y) = ySin(xy) , then gy(1, 0) = ...... | - 1 | 0 | 1 | 2 | 0|
+
+1)29)2)The quadratic curve x2+xy+ y2 = 1 represents …. | a circle | a parabola | an ellipse | a hyperbola | an ellipse |
+
+1)30)2)The length of the spiral r = θ2  , 0 ≤ θ≤√5 is ….. | 17 by 3 | 19 by 3 | 23 by 3 | 29 by 3 | 29 by 3 |
+1)31)2)Using double integral find the area of the region R bounded by y = 2 x2 and y2
+= 4x . | 4√2/3 – 16/3 | 4√2/3 + 16/3 | 16/3 - 4√2/3 | 16/3 + 4√2/3 | 4√2/3 – 16/3 | 
+
+1)32)2)The curvature of a circle of radius a is……. | 1/2a | 1/a | a | 2a |  1/a |
+Sure, here are 12 questions in the requested format on the topic:
+
+1)33)2)What is the purpose of Laplace transforms in differential equations?
+| Solving linear ordinary differential equations
+| Evaluating limits of functions
+| Finding definite integrals
+| Analyzing vector fields| Solving linear ordinary differential equations|
+
+1)34)2)What is the divergence of the vector field F(x, y, z) = yzi + xzj + xyk?
+| 1 | 2 | 0 | 3 | 3|
+
+1)35)2)What is the fundamental theorem of calculus used for?
+| Evaluating derivatives
+| Computing definite integrals
+| Finding eigenvalues
+| Solving linear systems of equations| Computing definite integrals|
+
+1)36)2)In polar coordinates, what does the angle θ represent?
+| Distance from the origin
+| Radius of the circle
+| Measure of rotation from the positive x-axis
+| Inclination angle from the z-axis| Measure of rotation from the positive x-axis|
+
+1)37)2)What is the equation of the tangent plane to the surface z = x^2 + y^2 at the point (1, 2, 5)?
+| z = 2x + 4y - 3
+| z = x + 2y + 5
+| z = 3x + 2y - 1
+| z = 2x - y + 5 | z = 3x + 2y - 1 |
+
+1)38)2)What does the Hessian matrix represent in multivariable calculus?
+| Second-order partial derivatives
+| Eigenvalues of a matrix
+| Linear transformations
+| Taylor series coefficients| Second-order partial derivatives|
+
+1)39)2)If f(x) = e^(2x), what is the second derivative f''(x)?
+| 2e^(2x)
+| 4e^(2x)
+| e^(2x)
+| 8e^(2x)| 4e^(2x)|
+
+1)40)2)What is the divergence theorem used for in vector calculus?
+| Relating surface and volume integrals
+| Calculating line integrals
+| Solving differential equations
+| Finding parametric equations| Relating surface and volume integrals|
+
+
+1)41)3)In multiple integrals, what does changing the order of integration affect?
+|The integrand
+| The limits of integration
+| The type of coordinate system used
+| The number of variables| The limits of integration|
+
+1)42)3)What does the Lagrange Multiplier method find?
+| Local maxima
+| Local minima
+| Global maxima
+| Global minima| Local minima|
+1)43)3)What does a polar integral calculate in the plane?
+|Length of the curve
+ |Area of the region
+ |Volume of the solid
+| Surface area |Area of the region|
+1)44)3)Which of the following is a polar equation for a circle?
+|r=sin(θ)
+|r=2cos(θ)
+|r=3+cos(θ)
+|r=1|r =1|
+1)45)3)The curvature of a circle of radius a/b  is……. | b2/a | 1/ab | b/a | 2a/b |  b/a |
+1)46)3)What does Green’s Theorem relate?
+|Line integrals and surface integrals
+| Divergence and flux
+| Circulation and divergence
+| Curl and flux| Circulation and divergence|
+1)47)3)The primitive period of cos nx is | 
+T = 2π/n
+| T=π
+| T=π /n
+| T=2π| T = 2π/n  | 
+1)48)3)A vector field f(x,y) = xi + yj is conservative if and only if there exists a scalar potential function f(x,y) is  ….. | x+y | x-y | xy | 2xy | x+y | 
+
+
+1)49)3)Find the local extreme value of the function: f(x, y) = xy – x2–y2-2x -2y +4 | 
+ | Local minimum at (1,1)
+ | Local maximum at (1,1)
+ | No local extreme value
+ | Local minimum at (0,0)(0,0)
+| Local maximum at (1,1)
+1)50)3)If f(x, y, z) = x2 +y2 +z2 with x = sint, y = cost, z = 5t, then df / dt  at t = 2 is…. | 2sin(2)cos(2)cos(2)
+| 2sin(2)cos2(2)
+| 2sin(2)cos(4)
+|  2sin(4)cos(2) | 2sin(2)cos(2)cos(2) | 
+
+
+
+
+
+1)51)3)Find the average value of F(x, y, z) = x + y + z over the cube in the first octant bounded by
+the coordinates plane and the planes x = 1, y = 2, and z = 3. | 3/2 | 4 | 5/2 | 1/2 | 3/2| 
+
+
+1)52)3)find the area of region r = 3 + 3cos θ . | 4 π|  9π | 3π  | 2π /3| 9π|
+
+1)53)3)The equation of directrix is ............................... for parabola for r = 25 / (10+10cosθ)| sinθ = 2/3 | cosθ = 2/3 | cosecθ = 2/3 |secθ = 3/2 |  cosθ = 2/3 | 
+
+1)54)3)Range of the function f(x,y,z) = 1/(x2 + y2 + z2) is …….. | f(x,y,z)∈(0,+∞) | f(x,y,z)∈(0,-∞) | f(x,y,z)∈(- ∞,+∞) | has no range for this function  | f(x,y,z)∈(0,+∞) | 
+
+1)55)3)find the equivalent Cartesian equation for the polar equation r−cos(θ)=sin(θ) | 
+
+y2=3x2−4xsin2(θ) | y2=3x2−4xcos2(θ)| 
+y2=−x2+4x2sin2(θ)  | y2=−x2+4x2cos2(θ) | y2=−x2+4x2sin2(θ) |
+
+1)56)3)The gradient of the field f(x, y, z) = xyz2 at point (1, 0, 1) is ….| i+j | i+k | j+k | -I – j| i+j|
+1)57)3) If f(x,y)=ycos(xy), then  fy(1,0) is... | −1 | 0 | 1 | 2 | 0 |
+
+1)58)3) The quadratic curve 2x2−xy+y2=4 represents... | a circle | a parabola | an ellipse | a hyperbola | an ellipse | 
+1)59)3) The length of the spiral r = θ2, 0≤θ≤7 is... | 17√7 | 19√7 | 23√7 | 29√7 | 29√7 | 
+
+
+
+1)60)3)find the area of the closed curve 9x2 + 4y2 = 36 …..  | 4π | 9π |6π | 3π |6π |
+1)61)4)Vector field F = Mi + Nj + Pk is conservative iff... | ∇×F=0 | ∇×F=2 | ∇.F=0 | ∇.F=1 | ∇×F=0 |
+1)22)0)The primitive period of h(x) = Cos 4x is ……. | π /4 |  π /2 |  π  | 2π  | π /2 |
+
+1)62)4)The plane containing unit tangent vector and binormal vector is called a(n) ………… | rincipal place | rectifying plane | osculating plane | normal plane | osculating plane | 
+
+
+1)63)4)r = 2a Sinθ is …….. | Cylinder | Cardiod | Rose petal | Circle | Rose petal |
+
+1)64)4)The curve r2 = 2a cos3θ is symmetric about…… | Pole |  initial line |  pole and initial line | line perpendicular to initial line | initial line | 
+1)65)4)A region in the plane is bounded if…….. |It contains a finite number of points | It is not connected. | It is not simply connected. | It can be covered by a closed curve. | It can be covered by a closed curve. |
+1)66)4)A vector field f(x,y) = yi + xj is conservative if and only if there exists a scalar potential function f(x,y) is  ….. | x+y | x-y | xy | 2xy | 2xy | 
+1)67)4)The primitive period of Tan nx is | 
+T = π/n
+| T=π
+| T=2π /n
+| T=2π| T = π/n  | 
+1)68)4)Convert polar coordinate system (2, 2π/3 , 1) into spherical and cylindrical coordinate
+system. | (2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and
+ (2cos(2π/3),2sin(2 π /3),1) |
+(2sin(2 π /3)cos(1),2sin(2 π /3)sin(1),2cos(2 π /3)) and
+ (2sin(2 π /3),2cos(2 π /3),1) | 
+(2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and
+(2sin(2 π /3),2cos(2 π /3),1) | 
+ (2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and
+(2sin(2 π /3),2cos(2 π /3),1) | 
+(2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and
+ (2cos(2π/3),2sin(2 π /3),1) |
+
+1)69)4)Find the length of Cardoide r = 2 + 2cosθ. | ∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ|
+∫ √{ (2+2sinθ)2+(−2cosθ)2}dθ |
+∫ √{ (2+2cotθ)2+(−2cosecθ)2}dθ |
+∫ √{ (2+2sinθ)2+(−2secθ)2}dθ |
+∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ|
+
+1)70)4) The polar curve r=3cos(2θ) represents... | Cylinder | Cardioid | Rose petal | Circle | Rose petal | 
+1)71)4) The curve r2=3acos(4θ) is symmetric about... | Pole | Initial line | Pole and initial line | Line perpendicular to initial line | Initial line | 
+1)72)4)Find the spherical of the point whose Cartesian coordinate is
+(1, 1, 1). | r=√2, ϕ=π/2 ,θ=0 |  r=√3, ϕ=π/4, θ= π/3
+|  r=√3, ϕ=π/4, θ is not uniquely defined
+|  r=1, ϕ=0, θ=π/3 |  r=√3, ϕ=π/4, θ= π/3 | 
+
+
+
+
+1)73)4)Let's consider a new function: f(x,y)=x2+y2+2x+2y−4. Now, the options will be based on the local extreme values of this function.| Local minimum at (1,1)| Local maximum at (1,1)| No local extreme valve| Local minimum at (0,0)| Local maximum at (1,1)| 
+
+1)74)4)The equivalent Cartesian equation of  r = sin2 θ  is  | x2 + y2 = 1 | xy = 1/2 | x+y = 1| x-y = 1| xy = 1/2 |
+
+1)75)4)The polar equation for the circle through the origin with radius 1 and center at (7, 0) is | 
+r = 7-cos θ |
+r=7+cos θ |
+r = 1-cos θ |
+r = 1+cos θ | r=7+cos θ |  
+
+
+
+1)76)4) Find the derivative of the function f(x,y) = x2 +y 2  at P0 (1,1) in the direction of unit vector u = 2i +2j. | Duf(P0)=2√2
+ |  Duf(P0)=0
+|  Duf(P0)=4
+| Duf(P0)=2
+| Duf(P0)=0 |  
+1)77)4)Find the average value of F(x, y, z) = 2x - y + z over the cube in the first octant bounded by
+the coordinates plane and the planes x = 3, y = 4, and z = 3. | -3/2 | 3/2 | -1/2 | 1/2 | -1/2| 
+
+
+1)78)4)find the area of region r = 2 + cos θ . |4 π | 2 π|  π| 0|0|
+1)79)0)Find the points on the curve xy2 = 54 nearest the origin. | (3,3√2) | 
+(3√2 , 3) | 
+ (2√6,3) |
+(√6,2√3)| (√6,2√3) |
+
+1)80)4)find the area inside the lemniscates r2=6cos(2θ) and outside the circle r=√3 . | 
+3/2[−sin(π/3)−sin(11π/3) | .   6/4[−sin(π/3)−sin(11π/3) | 3/2[sin(π/3) + sin(11π/3) | 3/2[−sin(π/6)−sin(11π/3) | 3/2[−sin(π/3)−sin(11π/3)|
+
+1)81)5) The curl of a vector field F=Pi+Qj at a point (x0,y0) is... | (∂x/∂Q−∂y/∂P)k | (∂x/∂P−∂y/∂Q)k | (∂y/∂Q−∂x/∂P)k | (∂y/∂P−∂/x∂Q)k | (∂x/∂Q−∂y/∂P)k |
+
+1)82)5)Find the points on the curve xy2=36 nearest to the origin. | (3,2√3) | (2√6,3) |(3√2,3) | (6,2√3)| (6,2√3) |
+
+1)83)5)The equation of a circle passing through the origin, centered on the x-axis with radius a is... | x2+(y+a)2=a2 | x2+(y−a)2=a2 |(x−a)2+y2=a2 | x2−(y−a)2=a2 | (x−a)2+y2=a2 |
+1)84)5) A region in the plane is said to be unbounded if...... | It contains an infinite number of points | It is connected. |  It extends indefinitely in one or more directions. | It cannot be covered by a closed curve. | It extends indefinitely in one or more directions. |
+
+1)85)5) For a curve defined by r(t)=sin(t)i+cos(t)j, the unit tangent vector is...... | v | cos(t)i−sin(t)j | −cos(t)i−sin(t)j | sin(t)i+cos(t)j | sin(t)i+cos(t)j | 
+
+1)86)5) Evaluate the line integral ∫C(2x−y2+z+3)ds over the straight line segment C where x=t,y=t,z=t and 0<  t <1. | 17/√3 | 5/√3 | 11/√3 | 7√3 | 17/√3 |
+1)87)5) Find the volume of the region that lies under the paraboloid z=x2+y2 and above the triangle enclosed by the lines y=x,x=0, and x+y=3 in the xy-plane. | 8/3 |17/3 | 8 | 16 | 8/3 | 
+1)88)5)Using double integral find the area of the region R bounded by y =  x2 and y
+= x2 . | 4√2/3 – 16/3 | 4√2/3 + 16/3 | 0| 16/3 + 4√2/3 | 0| 
+
+
+1)89)5)If f(x, y, z) = x2 +y2 +z2 with x = sint, y2 = cost, z2 = 3t, then df / dt  at t = 1 is…. | 2sin(2)cos(2)cos(2)
+| 2sin(1)cos(1)−sin(1)+3
+| 2sin(2)cos(4)
+|  2sin(4)cos(2) | 2sin(1)cos(1)−sin(1)+3 | 
+1)90)5) The equation of directrix is ............................... for parabola for r = 1 / (2+cosθ)| sinθ = 2/3 | 2/(1+cosθ) | cosecθ/3 |secθ/2 |  2/(1+cosθ) | 
+
+1)91)5)Range of the function f(x,y,z) = (x2 + 2y2 + z2) is …….. | f(x,y,z)∈[0,+∞) | f(x,y,z)∈[0,-∞) | f(x,y,z)∈(- ∞,+∞) | has no range for this function  | f(x,y,z)∈[0,+∞) | 
+
+
+1)92)5)The gradient of the field f(x, y, z) = 2xyz2 at point (1, 0, 1) is ….| 2j | i+k | j+k | -I – j| 2j|
+
+
+1)93)5)find the area of the closed curve 9x2 + 4y2 = 36 …..  | 4π | 9π |6π | 3π |6π |
+1)94)5)Convert polar coordinate system (2, 2π/3 , 1) into spherical and cylindrical coordinate
+system. | (2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and
+ (2cos(2π/3),2sin(2 π /3),1) |
+(2sin(2 π /3)cos(1),2sin(2 π /3)sin(1),2cos(2 π /3)) and
+ (2sin(2 π /3),2cos(2 π /3),1) | 
+(2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and
+(2sin(2 π /3),2cos(2 π /3),1) | 
+ (2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and
+(2sin(2 π /3),2cos(2 π /3),1) | 
+(2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and
+ (2cos(2π/3),2sin(2 π /3),1) |
+
+1)95)5)Find the length of Cardoide r = 2 + 2cosθ. | ∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ|
+∫ √{ (2+2sinθ)2+(−2cosθ)2}dθ |
+∫ √{ (2+2cotθ)2+(−2cosecθ)2}dθ |
+∫ √{ (2+2sinθ)2+(−2secθ)2}dθ |
+∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ|
+
+1)96)5)Find the Fourier coefficients a0 , an, bn for the following piecewise continuous function: 
+f(x) = { 0 if – π<x<0 , x if 0<x<π } | a0=π,an=0,bn  = 2/ nπ sin(nπ) | a0=0,an=1/π,bn=sin(nπ) | a0=π/2,an=0,bn=1/nsin(nπ) | a0=π,an=nπ2cos(nπ),bn=nπ2sin(nπ) | a0=π,an=0,bn  = 2/ nπ sin(nπ)|
+1)97)5)The curl of a vector field F⃗ = M ı⃗ +N j⃗ at a point (x0, y0) is ….. | (∂N/∂x − ∂M/∂y // )k | (∂M/∂x − ∂N/∂y // )k | (∂N/∂y − ∂M/∂x // )k |(∂M/∂y − ∂N/∂x // )k |(∂N/∂x − ∂M/∂y // )k |
+
+
+
+
+
+
+1)98)5)Find the line integral of f(x,y,z) = x-3y2 +z+5 over the straight line segment
+x=y=z=t , 0<t<1. | 19/√3 | 5/√3 | 11/√3 | 7√3 | 19/√3 | 
+
+1)99)5)Find the volume of the region that lies under the paraboloid z = x2+ y2 and above the triangle enclosed by the lines y = x, x = 0 and x + y= 2 in the xy- plane. | 16/3 |17/3 | 8 | 16 | 16/3 | 
+
+1)100)5)Find the spherical of the point whose Cartesian coordinate is
+(0, 1, 0). | ρ=1, ϕ=π/2 ,θ=0 |  ρ=1, ϕ=π/2, θ= π/2,
+|  ρ=1, ϕ=π/2, θ is not uniquely defined
+|  ρ=1, ϕ=0, θ=π/2 |  ρ=1, ϕ=π/2, θ is not uniquely defined  | 
+
+
+|
+
+
+
+
+
+
+
+
