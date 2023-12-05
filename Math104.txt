@@ -58,43 +58,43 @@
 1)18)3) The quadratic curve 2x2−xy+y2=4 represents... | a circle | a parabola | an ellipse | a hyperbola | an ellipse |\
 1)19)3) The length of the spiral r = θ2, 0≤θ≤7 is... | 17√7 | 19√7 | 23√7 | 29√7 | 29√7 \
 1)20)3)find the area of the closed curve 9x2 + 4y2 = 36 …..  | 4π | 9π |6π | 3π |6π \
-1)61)4)Vector field F = Mi + Nj + Pk is conservative iff... | ∇×F=0 | ∇×F=2 | ∇.F=0 | ∇.F=1 | ∇×F=0 \
-1)62)4)The plane containing unit tangent vector and binormal vector is called a(n) ………… | rincipal place | rectifying plane | osculating plane | normal plane | osculating plane \
-1)63)4)r = 2a Sinθ is …….. | Cylinder | Cardiod | Rose petal | Circle | Rose petal \
-1)64)4)The curve r2 = 2a cos3θ is symmetric about…… | Pole |  initial line |  pole and initial line | line perpendicular to initial line | initial line \
-1)65)4)A region in the plane is bounded if…….. |It contains a finite number of points | It is not connected. | It is not simply connected. | It can be covered by a closed curve. | It can be covered by a closed curve. \
-1)66)4)A vector field f(x,y) = yi + xj is conservative if and only if there exists a scalar potential function f(x,y) is  ….. | x+y | x-y | xy | 2xy | 2xy \
-1)67)4)The primitive period of Tan nx is | T = π/n| T=π| T=2π /n| T=2π| T = π/n  \
-1)68)4)Convert polar coordinate system (2, 2π/3 , 1) into spherical and cylindrical coordinate system. | (2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and (2cos(2π/3),2sin(2 π /3),1) |(2sin(2 π /3)cos(1),2sin(2 π /3)sin(1),2cos(2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and (2cos(2π/3),2sin(2 π /3),1) \
-1)69)4)Find the length of Cardoide r = 2 + 2cosθ. | ∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ|∫ √{ (2+2sinθ)2+(−2cosθ)2}dθ |∫ √{ (2+2cotθ)2+(−2cosecθ)2}dθ |∫ √{ (2+2sinθ)2+(−2secθ)2}dθ |∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ\
-1)70)4) The polar curve r=3cos(2θ) represents... | Cylinder | Cardioid | Rose petal | Circle | Rose petal \
-1)71)4) The curve r2=3acos(4θ) is symmetric about... | Pole | Initial line | Pole and initial line | Line perpendicular to initial line | Initial line \
-1)72)4)Find the spherical of the point whose Cartesian coordinate is (1, 1, 1). | r=√2, ϕ=π/2 ,θ=0 |  r=√3, ϕ=π/4, θ= π/3|  r=√3, ϕ=π/4, θ is not uniquely defined|  r=1, ϕ=0, θ=π/3 |  r=√3, ϕ=π/4, θ= π/3 \ 
-1)73)4)Let's consider a new function: f(x,y)=x2+y2+2x+2y−4. Now, the options will be based on the local extreme values of this function.| Local minimum at (1,1)| Local maximum at (1,1)| No local extreme valve| Local minimum at (0,0)| Local maximum at (1,1)\
-1)74)4)The equivalent Cartesian equation of  r = sin2 θ  is  | x2 + y2 = 1 | xy = 1/2 | x+y = 1| x-y = 1| xy = 1/2 \
-1)75)4)The polar equation for the circle through the origin with radius 1 and center at (7, 0) is | r = 7-cos θ |r=7+cos θ |r = 1-cos θ |r = 1+cos θ | r=7+cos θ \ 
-1)76)4) Find the derivative of the function f(x,y) = x2 +y 2  at P0 (1,1) in the direction of unit vector u = 2i +2j. | Duf(P0)=2√2 |  Duf(P0)=0|  Duf(P0)=4| Duf(P0)=2| Duf(P0)=0 \
-1)77)4)Find the average value of F(x, y, z) = 2x - y + z over the cube in the first octant bounded by the coordinates plane and the planes x = 3, y = 4, and z = 3. | -3/2 | 3/2 | -1/2 | 1/2 | -1/2 \
-1)78)4)find the area of region r = 2 + cos θ . |4 π | 2 π|  π| 0| 0\
-1)79)0)Find the points on the curve xy2 = 54 nearest the origin. | (3,3√2) | (3√2 , 3) |  (2√6,3) |(√6,2√3)|(√6,2√3)\
-1)80)4)find the area inside the lemniscates r2=6cos(2θ) and outside the circle r=√3 . | 3/2[−sin(π/3)−sin(11π/3) | .   6/4[−sin(π/3)−sin(11π/3) | 3/2[sin(π/3) + sin(11π/3) | 3/2[−sin(π/6)−sin(11π/3) | 3/2[−sin(π/3)−sin(11π/3) \
-1)81)5) The curl of a vector field F=Pi+Qj at a point (x0,y0) is... | (∂x/∂Q−∂y/∂P)k | (∂x/∂P−∂y/∂Q)k | (∂y/∂Q−∂x/∂P)k | (∂y/∂P−∂/x∂Q)k | (∂x/∂Q−∂y/∂P)k \
-1)82)5)Find the points on the curve xy2=36 nearest to the origin. | (3,2√3) | (2√6,3) |(3√2,3) | (6,2√3)| (6,2√3) \
-1)83)5)The equation of a circle passing through the origin, centered on the x-axis with radius a is... | x2+(y+a)2=a2 | x2+(y−a)2=a2 |(x−a)2+y2=a2 | x2−(y−a)2=a2 | (x−a)2+y2=a2 \
-1)84)5) A region in the plane is said to be unbounded if...... | It contains an infinite number of points | It is connected. |  It extends indefinitely in one or more directions. | It cannot be covered by a closed curve. | It extends indefinitely in one or more directions. \
-1)85)5) For a curve defined by r(t)=sin(t)i+cos(t)j, the unit tangent vector is...... | v | cos(t)i−sin(t)j | −cos(t)i−sin(t)j | sin(t)i+cos(t)j | sin(t)i+cos(t)j \
-1)86)5) Evaluate the line integral ∫C(2x−y2+z+3)ds over the straight line segment C where x=t,y=t,z=t and 0<  t <1. | 17/√3 | 5/√3 | 11/√3 | 7√3 | 17/√3 \
-1)87)5) Find the volume of the region that lies under the paraboloid z=x2+y2 and above the triangle enclosed by the lines y=x,x=0, and x+y=3 in the xy-plane. | 8/3 |17/3 | 8 | 16 | 8/3 \
-1)88)5)Using double integral find the area of the region R bounded by y =  x2 and y= x2 . | 4√2/3 – 16/3 | 4√2/3 + 16/3 | 0| 16/3 + 4√2/3 | 0\
-1)89)5)If f(x, y, z) = x2 +y2 +z2 with x = sint, y2 = cost, z2 = 3t, then df / dt  at t = 1 is…. |2sin(2)cos(2)cos(2)| 2sin(1)cos(1)−sin(1)+3| 2sin(2)cos(4)|  2sin(4)cos(2) | 2sin(1)cos(1)−sin(1)+3\
-1)90)5) The equation of directrix is ............................... for parabola for r = 1 / (2+cosθ)| sinθ = 2/3 | 2/(1+cosθ) | cosecθ/3 |secθ/2 |  2/(1+cosθ) \
-1)91)5)Range of the function f(x,y,z) = (x2 + 2y2 + z2) is …….. | f(x,y,z)∈[0,+∞) | f(x,y,z)∈[0,-∞) | f(x,y,z)∈(- ∞,+∞) | has no range for this function  | f(x,y,z)∈[0,+∞) \
-1)92)5)The gradient of the field f(x, y, z) = 2xyz2 at point (1, 0, 1) is ….| 2j | i+k | j+k | -I – j| 2j\
-1)93)5)find the area of the closed curve 9x2 + 4y2 = 36 …..  | 4π | 9π |6π | 3π |6π \
-1)94)5)Convert polar coordinate system (2, 2π/3 , 1) into spherical and cylindrical coordinatesystem. | (2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and (2cos(2π/3),2sin(2 π /3),1) |(2sin(2 π /3)cos(1),2sin(2 π /3)sin(1),2cos(2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and(2cos(2π/3),2sin(2 π /3),1) \
-1)95)5)Find the length of Cardoide r = 2 + 2cosθ. | ∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ|∫ √{ (2+2sinθ)2+(−2cosθ)2}dθ |∫ √{ (2+2cotθ)2+(−2cosecθ)2}dθ |∫ √{ (2+2sinθ)2+(−2secθ)2}dθ |∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ\
-1)96)5)Find the Fourier coefficients a0 , an, bn for the following piecewise continuous function: f(x) = { 0 if – π<x<0 , x if 0<x<π } | a0=π,an=0,bn  = 2/ nπ sin(nπ) | a0=0,an=1/π,bn=sin(nπ) | a0=π/2,an=0,bn=1/nsin(nπ) | a0=π,an=nπ2cos(nπ),bn=nπ2sin(nπ) | a0=π,an=0,bn  = 2/ nπ sin(nπ)\
-1)97)5)The curl of a vector field F⃗ = M ı⃗ +N j⃗ at a point (x0, y0) is ….. | (∂N/∂x − ∂M/∂y // )k | (∂M/∂x − ∂N/∂y // )k | (∂N/∂y − ∂M/∂x // )k |(∂M/∂y − ∂N/∂x // )k |(∂N/∂x − ∂M/∂y // )k \
-1)98)5)Find the line integral of f(x,y,z) = x-3y2 +z+5 over the straight line segment x=y=z=t , 0<t<1. | 19/√3 | 5/√3 | 11/√3 | 7√3 | 19/√3 | 
-1)99)5)Find the volume of the region that lies under the paraboloid z = x2+ y2 and above the triangle enclosed by the lines y = x, x = 0 and x + y= 2 in the xy- plane. | 16/3 |17/3 | 8 | 16 | 16/3 \ 
-1)100)5)Find the spherical of the point whose Cartesian coordinate is(0, 1, 0). | ρ=1, ϕ=π/2 ,θ=0 |  ρ=1, ϕ=π/2, θ= π/2,|  ρ=1, ϕ=π/2, θ is not uniquely defined|  ρ=1, ϕ=0, θ=π/2 |  ρ=1, ϕ=π/2, θ is not uniquely defined  \
+1)1)4)Vector field F = Mi + Nj + Pk is conservative iff... | ∇×F=0 | ∇×F=2 | ∇.F=0 | ∇.F=1 | ∇×F=0 \
+1)2)4)The plane containing unit tangent vector and binormal vector is called a(n) ………… | rincipal place | rectifying plane | osculating plane | normal plane | osculating plane \
+1)3)4)r = 2a Sinθ is …….. | Cylinder | Cardiod | Rose petal | Circle | Rose petal \
+1)4)4)The curve r2 = 2a cos3θ is symmetric about…… | Pole |  initial line |  pole and initial line | line perpendicular to initial line | initial line \
+1)5)4)A region in the plane is bounded if…….. |It contains a finite number of points | It is not connected. | It is not simply connected. | It can be covered by a closed curve. | It can be covered by a closed curve. \
+1)6)4)A vector field f(x,y) = yi + xj is conservative if and only if there exists a scalar potential function f(x,y) is  ….. | x+y | x-y | xy | 2xy | 2xy \
+1)7)4)The primitive period of Tan nx is | T = π/n| T=π| T=2π /n| T=2π| T = π/n  \
+1)8)4)Convert polar coordinate system (2, 2π/3 , 1) into spherical and cylindrical coordinate system. | (2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and (2cos(2π/3),2sin(2 π /3),1) |(2sin(2 π /3)cos(1),2sin(2 π /3)sin(1),2cos(2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and (2cos(2π/3),2sin(2 π /3),1) \
+1)9)4)Find the length of Cardoide r = 2 + 2cosθ. | ∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ|∫ √{ (2+2sinθ)2+(−2cosθ)2}dθ |∫ √{ (2+2cotθ)2+(−2cosecθ)2}dθ |∫ √{ (2+2sinθ)2+(−2secθ)2}dθ |∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ\
+1)10)4) The polar curve r=3cos(2θ) represents... | Cylinder | Cardioid | Rose petal | Circle | Rose petal \
+1)11)4) The curve r2=3acos(4θ) is symmetric about... | Pole | Initial line | Pole and initial line | Line perpendicular to initial line | Initial line \
+1)12)4)Find the spherical of the point whose Cartesian coordinate is (1, 1, 1). | r=√2, ϕ=π/2 ,θ=0 |  r=√3, ϕ=π/4, θ= π/3|  r=√3, ϕ=π/4, θ is not uniquely defined|  r=1, ϕ=0, θ=π/3 |  r=√3, ϕ=π/4, θ= π/3 \ 
+1)13)4)Let's consider a new function: f(x,y)=x2+y2+2x+2y−4. Now, the options will be based on the local extreme values of this function.| Local minimum at (1,1)| Local maximum at (1,1)| No local extreme valve| Local minimum at (0,0)| Local maximum at (1,1)\
+1)14)4)The equivalent Cartesian equation of  r = sin2 θ  is  | x2 + y2 = 1 | xy = 1/2 | x+y = 1| x-y = 1| xy = 1/2 \
+1)15)4)The polar equation for the circle through the origin with radius 1 and center at (7, 0) is | r = 7-cos θ |r=7+cos θ |r = 1-cos θ |r = 1+cos θ | r=7+cos θ \ 
+1)16)4) Find the derivative of the function f(x,y) = x2 +y 2  at P0 (1,1) in the direction of unit vector u = 2i +2j. | Duf(P0)=2√2 |  Duf(P0)=0|  Duf(P0)=4| Duf(P0)=2| Duf(P0)=0 \
+1)17)4)Find the average value of F(x, y, z) = 2x - y + z over the cube in the first octant bounded by the coordinates plane and the planes x = 3, y = 4, and z = 3. | -3/2 | 3/2 | -1/2 | 1/2 | -1/2 \
+1)18)4)find the area of region r = 2 + cos θ . |4 π | 2 π|  π| 0| 0\
+1)19)0)Find the points on the curve xy2 = 54 nearest the origin. | (3,3√2) | (3√2 , 3) |  (2√6,3) |(√6,2√3)|(√6,2√3)\
+1)20)4)find the area inside the lemniscates r2=6cos(2θ) and outside the circle r=√3 . | 3/2[−sin(π/3)−sin(11π/3) | .   6/4[−sin(π/3)−sin(11π/3) | 3/2[sin(π/3) + sin(11π/3) | 3/2[−sin(π/6)−sin(11π/3) | 3/2[−sin(π/3)−sin(11π/3) \
+1)1)5) The curl of a vector field F=Pi+Qj at a point (x0,y0) is... | (∂x/∂Q−∂y/∂P)k | (∂x/∂P−∂y/∂Q)k | (∂y/∂Q−∂x/∂P)k | (∂y/∂P−∂/x∂Q)k | (∂x/∂Q−∂y/∂P)k \
+1)2)5)Find the points on the curve xy2=36 nearest to the origin. | (3,2√3) | (2√6,3) |(3√2,3) | (6,2√3)| (6,2√3) \
+1)3)5)The equation of a circle passing through the origin, centered on the x-axis with radius a is... | x2+(y+a)2=a2 | x2+(y−a)2=a2 |(x−a)2+y2=a2 | x2−(y−a)2=a2 | (x−a)2+y2=a2 \
+1)4)5) A region in the plane is said to be unbounded if...... | It contains an infinite number of points | It is connected. |  It extends indefinitely in one or more directions. | It cannot be covered by a closed curve. | It extends indefinitely in one or more directions. \
+1)5)5) For a curve defined by r(t)=sin(t)i+cos(t)j, the unit tangent vector is...... | v | cos(t)i−sin(t)j | −cos(t)i−sin(t)j | sin(t)i+cos(t)j | sin(t)i+cos(t)j \
+1)6)5) Evaluate the line integral ∫C(2x−y2+z+3)ds over the straight line segment C where x=t,y=t,z=t and 0<  t <1. | 17/√3 | 5/√3 | 11/√3 | 7√3 | 17/√3 \
+1)7)5) Find the volume of the region that lies under the paraboloid z=x2+y2 and above the triangle enclosed by the lines y=x,x=0, and x+y=3 in the xy-plane. | 8/3 |17/3 | 8 | 16 | 8/3 \
+1)8)5)Using double integral find the area of the region R bounded by y =  x2 and y= x2 . | 4√2/3 – 16/3 | 4√2/3 + 16/3 | 0| 16/3 + 4√2/3 | 0\
+1)9)5)If f(x, y, z) = x2 +y2 +z2 with x = sint, y2 = cost, z2 = 3t, then df / dt  at t = 1 is…. |2sin(2)cos(2)cos(2)| 2sin(1)cos(1)−sin(1)+3| 2sin(2)cos(4)|  2sin(4)cos(2) | 2sin(1)cos(1)−sin(1)+3\
+1)10)5) The equation of directrix is ............................... for parabola for r = 1 / (2+cosθ)| sinθ = 2/3 | 2/(1+cosθ) | cosecθ/3 |secθ/2 |  2/(1+cosθ) \
+1)11)5)Range of the function f(x,y,z) = (x2 + 2y2 + z2) is …….. | f(x,y,z)∈[0,+∞) | f(x,y,z)∈[0,-∞) | f(x,y,z)∈(- ∞,+∞) | has no range for this function  | f(x,y,z)∈[0,+∞) \
+1)12)5)The gradient of the field f(x, y, z) = 2xyz2 at point (1, 0, 1) is ….| 2j | i+k | j+k | -I – j| 2j\
+1)13)5)find the area of the closed curve 9x2 + 4y2 = 36 …..  | 4π | 9π |6π | 3π |6π \
+1)14)5)Convert polar coordinate system (2, 2π/3 , 1) into spherical and cylindrical coordinatesystem. | (2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and (2cos(2π/3),2sin(2 π /3),1) |(2sin(2 π /3)cos(1),2sin(2 π /3)sin(1),2cos(2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2cos(2 π /3)cos(1),2cos(2 π /3)sin(1),2sin (2 π /3)) and(2sin(2 π /3),2cos(2 π /3),1) | (2sin(2π/3)cos(1),2sin(2π/3)sin(1),2cos(2π/3)) and(2cos(2π/3),2sin(2 π /3),1) \
+1)15)5)Find the length of Cardoide r = 2 + 2cosθ. | ∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ|∫ √{ (2+2sinθ)2+(−2cosθ)2}dθ |∫ √{ (2+2cotθ)2+(−2cosecθ)2}dθ |∫ √{ (2+2sinθ)2+(−2secθ)2}dθ |∫ √{ (2+2cosθ)2+(−2sinθ)2}dθ\
+1)16)5)Find the Fourier coefficients a0 , an, bn for the following piecewise continuous function: f(x) = { 0 if – π<x<0 , x if 0<x<π } | a0=π,an=0,bn  = 2/ nπ sin(nπ) | a0=0,an=1/π,bn=sin(nπ) | a0=π/2,an=0,bn=1/nsin(nπ) | a0=π,an=nπ2cos(nπ),bn=nπ2sin(nπ) | a0=π,an=0,bn  = 2/ nπ sin(nπ)\
+1)17)5)The curl of a vector field F⃗ = M ı⃗ +N j⃗ at a point (x0, y0) is ….. | (∂N/∂x − ∂M/∂y // )k | (∂M/∂x − ∂N/∂y // )k | (∂N/∂y − ∂M/∂x // )k |(∂M/∂y − ∂N/∂x // )k |(∂N/∂x − ∂M/∂y // )k \
+1)18)5)Find the line integral of f(x,y,z) = x-3y2 +z+5 over the straight line segment x=y=z=t , 0<t<1. | 19/√3 | 5/√3 | 11/√3 | 7√3 | 19/√3 | 
+1)19)5)Find the volume of the region that lies under the paraboloid z = x2+ y2 and above the triangle enclosed by the lines y = x, x = 0 and x + y= 2 in the xy- plane. | 16/3 |17/3 | 8 | 16 | 16/3 \ 
+1)20)5)Find the spherical of the point whose Cartesian coordinate is(0, 1, 0). | ρ=1, ϕ=π/2 ,θ=0 |  ρ=1, ϕ=π/2, θ= π/2,|  ρ=1, ϕ=π/2, θ is not uniquely defined|  ρ=1, ϕ=0, θ=π/2 |  ρ=1, ϕ=π/2, θ is not uniquely defined  \
