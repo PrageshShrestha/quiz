@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <numeric>
 #include <time.h>
-
+#include <wingdi.h>
 
 using namespace std;
 
@@ -31,6 +31,9 @@ public:
         answer = *a;
         options = o;
 
+    }
+    void setColor(int bg, int t){
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 16*bg + t);
     }
     int sendPoint(){
         return point;
@@ -56,9 +59,11 @@ public:
             cout << question << '\n';
             for (int i = 0; i < 4; i++) {
                 if (i == option) {
-                    cout << u8"\u2794";
+                    cout << '>';
+                    setColor(0, 3);
                 }
                 cout << options[i] << endl;
+                setColor(0, 7);
             }
             while (key == 0){
                 key = _getch();
@@ -85,18 +90,48 @@ public:
                     break;
             }   
         } while (key != '\r');
+        system("CLS");
         if (answer == options[option]) {
             point += (*l) + 1;
             if (*l != 4) {
                 (*l)++;
+            } 
+            cout << "Level: " << *l + 1 << endl;
+            cout << questionNumber << ")";
+            cout << question << '\n';
+            for (int i = 0; i < 4; i++) {
+                if (answer == options[i]) {
+                    setColor(0, 10);
+                }
+                cout << options[i] << endl;
+                setColor(0, 7);
             }
-            cout << "Your answer is correct" << endl; 
+            while (key == 0){
+                key = _getch();
+            }
         }
         else  {
             if (*l != 0){
                 (*l)--;
             }
-            cout << "Your answer is incorrect\nThe correct answer is " << answer << endl;
+
+            cout << "Level: " << *l + 1 << endl;
+            cout << questionNumber << ")";
+            cout << question << '\n';
+            for (int i = 0; i < 4; i++) {
+                if (answer == options[i]) {
+                    setColor(0, 10);
+                }
+                else if (options[i] == options[option]){
+                    setColor(0, 12);
+                }
+                cout << options[i] << endl;
+                setColor(0, 7);
+            }
+            while (key == 0){
+                key = _getch();
+            }
+
         }
         cout<< "You have " << point << " points\n";
         _getch();
@@ -153,10 +188,55 @@ int menu() {
     } while (key != '\r');
     return s;
 }
+struct{
+        string playerName;
+        int points;
+}player[50];
 
-void displayScore(){
+int cmpfunc (const void * a, const void * b) {
+   return ( *(int*)a - *(int*)b );
+}
+
+void displayScore(string currentUser){
     int score = questionBank[0][0].sendPoint();
     cout << "You have scored" << score;
+    cout << "Leaderboard";
+    ifstream readFile("scores.txt");
+    ofstream writeFile("scores.txt");
+    string unparsed;
+    char name[50];
+    char point[50];
+    if(!readFile.is_open()){
+        readFile.open("scores.txt", ios::out);
+    }
+    int counter = 0;
+    int player_index = 0;
+    QnA a;
+    while(getline(readFile, unparsed)){
+        for (size_t i = 0; unparsed[i] != ' '; i++) {
+            point[counter] = unparsed[i];
+            counter++;
+        }
+        point[counter] = '\0';
+        int i = 0;
+        while (unparsed[counter] != '0') {
+            name[i] = unparsed[counter];
+            i++;
+        }
+        player[player_index].playerName = name;
+        player[player_index].points= stoi(point);
+        player_index++;
+    }
+    player[player_index].playerName = currentUser;
+    player[player_index].points = a.sendPoint();
+    qsort(player, player_index, sizeof(player), cmpfunc);
+
+    for (int i = 0; i < 10; i++){
+        
+        cout << '\n' << i + 1 << "\t" << player[i].playerName << '\t' << player[i].points << '\n';
+    }
+
+
 }
 
 void loadQuestion(int subjectCode) {
@@ -280,11 +360,22 @@ void displayQuestion() {
     }
 }
 
+string main_menu(){
+    
+    system("CLS");
+    static string playerName;
+    cout << "Please enter your name.: ";
+    cin >> playerName;
+    return playerName;
+}
+
 int QnA::point = 0;
 int main() {
     int level;
+    string player;
+    player = main_menu();
     int subjectCode = menu();
     loadQuestion(subjectCode);
     displayQuestion();
-    displayScore();
+    displayScore(player);
 }
