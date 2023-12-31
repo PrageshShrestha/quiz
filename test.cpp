@@ -1,4 +1,3 @@
-
 // should return ascii_value for system
 #include <random>
 #include <string>
@@ -156,8 +155,12 @@ public:
                 key = _getch();
             }
         }
+        key = 0;
         cout << "You have " << point << " points\n";
-        _getch();
+        while (key == 0)
+        {
+            key = _getch();
+        }
         cout << endl;
         questionNumber++;
     }
@@ -176,21 +179,27 @@ int menu()
         key = 0;
         system("CLS");
         if (s == 0)
-            cout << ">" << "MATH114\nPHYS102\nENEV101\nCOMP116\nENGT105\nENGG112\n";
+            cout << ">"
+                 << "MATH114\nPHYS102\nENEV101\nCOMP116\nENGT105\nENGG112\n";
         else if (s == 1)
-            cout << "MATH114\n" << u8"\u2794" << "PHYS102\nENEV101\nCOMP116\nENGT105\nENGG112\n";
+            cout << "MATH114\n"
+                 << u8"\u2794" << "PHYS102\nENEV101\nCOMP116\nENGT105\nENGG112\n";
         else if (s == 2)
             cout << "MATH114\nPHYS102\n"
-                 << ">" << "ENEV101\nCOMP116\nENGT105\nENGG112\n";
+                 << ">"
+                 << "ENEV101\nCOMP116\nENGT105\nENGG112\n";
         else if (s == 3)
             cout << "MATH114\nPHYS102\nENEV101\n"
-                 << ">"<< "COMP116\nENGT105\nENGG112\n";
+                 << ">"
+                 << "COMP116\nENGT105\nENGG112\n";
         else if (s == 4)
             cout << "MATH114\nPHYS102\nENEV101\nCOMP116\n"
-                 << ">" << "ENGT105\nENGG112\n";
+                 << ">"
+                 << "ENGT105\nENGG112\n";
         else if (s == 5)
             cout << "MATH114\nPHYS102\nENEV101\nCOMP116\nENGT105\n"
-                 << ">" << "ENGG112\n";
+                 << ">"
+                 << "ENGG112\n";
         else
             s = 0;
         while (key == 0)
@@ -201,9 +210,14 @@ int menu()
         {
         case 72:
             if (s != 0)
+            {
                 s--;
+            }
             else
+            {
+
                 s = 5;
+            }
             break;
         case 80:
             if (s != 5)
@@ -278,7 +292,7 @@ void displayScore(string currentUser)
 
     for (int i = 0; i <= player_index; i++)
     {
-        if (i <= 10)
+        if (i < 10)
         {
             cout << '\n'
                  << i + 1 << '\t' << player[i].playerName << '\t' << player[i].points << '\n';
@@ -427,6 +441,7 @@ void displayQuestion()
 
 string main_menu()
 {
+
 
     system("CLS");
     static string playerName;
