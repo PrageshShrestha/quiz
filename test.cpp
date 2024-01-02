@@ -291,13 +291,14 @@ void displayScore(string currentUser)
 
     writeFile.open("scores.txt");
 
+    for (int i = 0; i < 10; i++){
+        cout << '\n'
+            << i + 1 << '\t' << player[i].playerName << '\t' << player[i].points << '\n';
+    }
+
+
     for (int i = 0; i <= player_index; i++)
     {
-        if (i < 10)
-        {
-            cout << '\n'
-                 << i + 1 << '\t' << player[i].playerName << '\t' << player[i].points << '\n';
-        }
         writeFile << player[i].points << ' ' << player[i].playerName << '\n';
     }
 }
