@@ -15,6 +15,7 @@
 #include <time.h>
 #include <wingdi.h>
 
+
 using namespace std;
 
 static int questionNumber{1};
